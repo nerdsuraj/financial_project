@@ -1,5 +1,6 @@
 import Signup from "../pages/signup/signup";
 import Login from "../pages/signin/signin";
+import Navbar from "../pages/Navbar/navbar";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function reactRouter() {
@@ -9,6 +10,7 @@ function reactRouter() {
                 <Routes>
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/Login" element={<Login />} />
+                    <Route path="/Dashboard" element={<Navbar />} />
                 </Routes>
             </Router>
         </div>);
