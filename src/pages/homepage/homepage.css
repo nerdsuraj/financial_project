@@ -1,0 +1,24 @@
+.homebody{
+    border:1px solid red;
+    /* css property to give available height*/
+    height:100vh;
+    background-image: url("../../assets/images/homepage.jpg"); 
+    background-repeat:no-repeat;
+    background-size: cover; 
+    padding:0px 2%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+}
+
+.bulletin{
+    background-color:rgb(255,255,255,0.5);
+    width:100%;
+    /* max-width:800px; */
+    margin:auto;
+    padding:10px;
+    font-weight:bold;
+    border-radius:13px;
+}
+.bulletin-content{
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
