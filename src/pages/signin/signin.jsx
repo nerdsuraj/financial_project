@@ -4,13 +4,32 @@ import './signin.css';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
+import { useFormik } from 'formik';
+import { FormSchema } from "../FormSchema";
 const EmailRegex = /^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$/
 const PasswordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/
 
-const signin = () => {
-    return (<div>
+const Signin = () => {
 
-<section className="text-center">
+    const FormInitialValues = {
+        email: '',
+        password: ''
+    }
+
+    const formik = useFormik({
+        initialValues: FormInitialValues,
+        validationSchema:FormSchema,
+        onSubmit: (values) => {
+            console.log("values", values);
+            // console.log("values", values.name);
+            // console.log("values", values.email);
+        }
+    })
+
+
+
+    return (<div>
+        <section className="text-center">
             <div className="p-5 bg-image" style={{ backgroundImage: 'url("https://mdbootstrap.com/img/new/textures/full/171.jpg")', "height": "300px" }}>
             </div>
 
@@ -19,14 +38,16 @@ const signin = () => {
                     <div className="row d-flex justify-content-center">
                         <div className="col-lg-8">
                             <h2 className="fw-bold mb-5">Sign in now</h2>
-                            <form>
+                            <form onSubmit={formik.handleSubmit}>
                                 <div className="form-outline mb-4">
-                                    <input type="email" id="form3Example3" className="form-control" />
                                     <label className="form-label" htmlFor="form3Example3">Email address</label>
+                                    <input type="text" id="form3Example3" className="form-control"  name="email" onChange={formik.handleChange} value={formik.values.email}/>
+                                    <span className="text-danger">{formik.errors.email}</span>
                                 </div>
                                 <div className="form-outline mb-4">
-                                    <input type="password" id="form3Example4" className="form-control" />
                                     <label className="form-label" htmlFor="form3Example4">Password</label>
+                                    <input type="password" id="form3Example4" className="form-control"  name="password" onChange={formik.handleChange} value={formik.values.password}/>
+                                    <span className="text-danger">{formik.errors.password}</span>
                                 </div>
                                 <button type="submit" className="btn btn-primary btn-block mb-4">
                                     Sign in
@@ -61,4 +82,4 @@ const signin = () => {
 
 }
 
-export default signin;
+export default Signin;
