@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 // import Navbar from "../Navbar/navbar";
 import "./homepage.css";
 import avatar from "../../../src/logo.svg";

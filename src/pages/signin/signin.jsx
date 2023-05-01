@@ -1,31 +1,34 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-vars */
 import React from "react";
-import './signin.css';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
+import './signin.css'
 import { useFormik } from 'formik';
-import { FormSchema } from "../FormSchema";
+import { signinSchema } from "./signinSchema";
 const EmailRegex = /^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$/
 const PasswordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/
 
 const Signin = () => {
+    let navigate = useNavigate();
 
     const FormInitialValues = {
-        email: '',
-        password: ''
+        email: 'soorajkrpandit@gmail.com',
+        password: 'Suraj@6200'
     }
 
-    const formik = useFormik({
+    const { handleSubmit, values,errors,touched,handleBlur,handleChange } = useFormik({
         initialValues: FormInitialValues,
-        validationSchema:FormSchema,
+        validationSchema:signinSchema,
         onSubmit: (values) => {
-            console.log("values", values);
-            // console.log("values", values.name);
-            // console.log("values", values.email);
+            console.log("values from sign in!!", values);
+            if(values !== null){
+                navigate('/');
+            }
         }
     })
-
+    function Login() {
+        navigate('/signup');
+    }
 
 
     return (<div>
@@ -38,16 +41,19 @@ const Signin = () => {
                     <div className="row d-flex justify-content-center">
                         <div className="col-lg-8">
                             <h2 className="fw-bold mb-5">Sign in now</h2>
-                            <form onSubmit={formik.handleSubmit}>
+                            <form onSubmit={handleSubmit}>
                                 <div className="form-outline mb-4">
                                     <label className="form-label" htmlFor="form3Example3">Email address</label>
-                                    <input type="text" id="form3Example3" className="form-control"  name="email" onChange={formik.handleChange} value={formik.values.email}/>
-                                    <span className="text-danger">{formik.errors.email}</span>
+                                    <input type="email" id="form3Example3" className="form-control"  name="email" onBlur={handleBlur} value={values.email} onChange={handleChange}  />
+                                    {errors.email && touched.email ? (<span className="text-danger">{errors.email}</span>) : null}
                                 </div>
                                 <div className="form-outline mb-4">
                                     <label className="form-label" htmlFor="form3Example4">Password</label>
-                                    <input type="password" id="form3Example4" className="form-control"  name="password" onChange={formik.handleChange} value={formik.values.password}/>
-                                    <span className="text-danger">{formik.errors.password}</span>
+                                    <input type="password" id="form3Example4" className="form-control"  name="password" onBlur={handleBlur} value={values.password} onChange={handleChange} />
+                                    {errors.password && touched.password ? (<span className="text-danger">{errors.password}</span>) : null}
+                                </div>
+                                <div style={{"marginRight":"72%","cursor":"pointer"}}>
+                                <a onClick={Login}>Don't have an account? Register here</a>
                                 </div>
                                 <button type="submit" className="btn btn-primary btn-block mb-4">
                                     Sign in
