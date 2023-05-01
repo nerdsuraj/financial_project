@@ -1,0 +1,27 @@
+.searchContainer{
+    position : relative;
+}
+
+.custom_input{
+    font-size:0.9rem;
+    padding:10px;
+    min-width:220px;
+    border-radius:0px;
+    border:0px;
+}
+
+.custom_input:focus{
+    border:0px!important;
+    outline:0px!important;
+}
+
+.search{
+    position:absolute;
+    right:5px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+}
+.menu{
+    left:-25%!important;
+}

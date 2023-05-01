@@ -6,16 +6,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function reactRouter() {
     return (
-        <div>
+            <div>
             <Router>
                 <Routes>
                     <Route path="/" element={<Homepage/>} />
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/Login" element={<Login />} />
-                    <Route path="/Dashboard" element={<Navbar />} />
+                    {/* <Route path="/Dashboard" element={<Navbar />} /> */}
                 </Routes>
             </Router>
-        </div>);
-}
+        </div>
+)}
 
 export default reactRouter;
