@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './singup.css';
 import { useFormik } from "formik";
 import { signupSchema } from "./signupSchema";
+import { UserSignUp } from "../../services/userservice";
 
 
 const Signup = () => {
@@ -21,6 +22,10 @@ const Signup = () => {
         onSubmit: (values) => {
             console.log("values from sign up!!", values);
             if (values !== null) {
+                UserSignUp(values).then((res) => {
+                    console.log(res);
+                    // localStorage.setItem('token', res.data.data);
+                });
                 navigate('/login');
             }
         },

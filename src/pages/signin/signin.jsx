@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 import './signin.css'
 import { useFormik } from 'formik';
 import { signinSchema } from "./signinSchema";
-const EmailRegex = /^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$/
-const PasswordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/
+import { UserSignIn } from "../../services/userservice";
+
 
 const Signin = () => {
     let navigate = useNavigate();
@@ -22,6 +22,10 @@ const Signin = () => {
         onSubmit: (values) => {
             console.log("values from sign in!!", values);
             if(values !== null){
+                UserSignIn(values).then((res)=>{
+                    console.log(res);
+                    // localStorage.setItem('token',res.data.data)
+                })
                 navigate('/');
             }
         }
