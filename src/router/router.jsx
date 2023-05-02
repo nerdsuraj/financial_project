@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Signup from "../pages/signup/signup";
 import Login from "../pages/signin/signin";
 import Navbar from "../pages/Navbar/navbar";

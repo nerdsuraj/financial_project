@@ -10,9 +10,7 @@ const Webinar = () => {
                 {
                     webinarObj.map((item) => {
                         return (
-                            <Newscard
-                               {...item}
-                            />
+                            <Newscard key={item.id} {...item} />
                         )
                     }
                 )}

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Navbar from "../Navbar/navbar";
 import Newscard from "../Newscard";

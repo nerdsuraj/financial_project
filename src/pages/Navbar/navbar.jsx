@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 
 //import first image as logo from images folder inside assets
 import logo from '../../assets/images/computer-icons-chart-analytics-financial-web-analytics-icon.jpg';
@@ -34,13 +35,13 @@ const Navbar = () => {
                             <a className="nav-link" href="#">Blog</a>
                         </li>
                         <li className="nav-item" style={{position:'relative'}}>
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                                 <img src={user} alt="user" style={{width:'25px'}}/>
                             </a>
-                            <ul class="dropdown-menu menu">
-                                <li><a class="dropdown-item" href="#">Edit Profile</a></li>
-                                <li><a class="dropdown-item" href="#">Upgrade</a></li>
-                                <li><a class="dropdown-item" href="#">Log Out</a></li>
+                            <ul className="dropdown-menu menu">
+                                <li><a className="dropdown-item" href="#">Edit Profile</a></li>
+                                <li><a className="dropdown-item" href="#">Upgrade</a></li>
+                                <li><a className="dropdown-item" href="#">Log Out</a></li>
                             </ul>
                         </li>
                     </ul>

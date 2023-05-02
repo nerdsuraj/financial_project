@@ -10,9 +10,7 @@ const Courses = () => {
                 {
                     stockObj.map((item) => {
                         return (
-                            <Newscard
-                               {...item}
-                            />
+                            <Newscard key={item.id}   {...item} />
                         )
                     }
                 )}
