@@ -5,6 +5,7 @@ import Newscard from "../Newscard";
 import "./homepage.css";
 import Courses from "../Courses";
 import Webinar from "../Webinar";
+import Footer from "../Footer/footer";
 
 const Homepage = () => {
     return (
@@ -20,6 +21,10 @@ const Homepage = () => {
             </div>
             <Courses/>
             <Webinar/>
+            <div className="container-lg py-2">
+            <hr style={{"color":"red"}}></hr>
+            <Footer/>
+            </div>
         </>
     )
 }
