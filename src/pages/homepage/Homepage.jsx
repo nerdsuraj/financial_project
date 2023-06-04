@@ -1,13 +1,32 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Navbar from "../Navbar/navbar";
-import Newscard from "../Newscard";
+import { useState, useEffect } from "react";
 import "./homepage.css";
 import Courses from "../Courses";
 import Webinar from "../Webinar";
 import Footer from "../Footer/footer";
+import { BusinessService } from "../../services/businessServices";
 
 const Homepage = () => {
+
+    useEffect(() => {
+        get_news();
+    }, []);
+
+    const get_news = async () => {
+        const obj = {
+            "email": "soorajkrpandit@gmail.com",
+            "password": "Suraj@12345"
+        }
+        try {
+            const response = await BusinessService().getDataByPost(obj);
+            console.log('response', response);
+        } catch (error) {
+            console.error('Error fetching news:', error);
+        }
+    }
+
     return (
         <>
             <Navbar />
@@ -19,11 +38,11 @@ const Homepage = () => {
                     </div>
                 </div>
             </div>
-            <Courses/>
-            <Webinar/>
+            <Courses />
+            <Webinar />
             <div className="container-lg py-2">
-            <hr style={{"color":"red"}}></hr>
-            <Footer/>
+                <hr style={{ "color": "red" }}></hr>
+                {/* <Footer/> */}
             </div>
         </>
     )

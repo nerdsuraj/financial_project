@@ -5,32 +5,39 @@ import './singup.css';
 import { useFormik } from "formik";
 import { signupSchema } from "./signupSchema";
 import { UserSignUp } from "../../services/userservice";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Signup = () => {
     const navigate = useNavigate();
 
     const FormInitialValues = {
-        name: 'Suraj',
+        name: 'suraj',
         email: 'soorajkrpandit@gmail.com',
-        password: 'Sura@123',
+        password: 'Suraj@12345',
     };
 
-    const { handleSubmit, values,errors,touched,handleBlur,handleChange } = useFormik({
+    const { handleSubmit, values, errors, touched, handleBlur, handleChange } = useFormik({
         initialValues: FormInitialValues,
-        validationSchema:signupSchema,
-        onSubmit: (values) => {
+        validationSchema: signupSchema,
+        onSubmit: async (values) => {
             console.log("values from sign up!!", values);
             if (values !== null) {
                 UserSignUp(values).then((res) => {
-                    console.log(res);
-                    // localStorage.setItem('token', res.data.data);
-                });
-                navigate('/login');
+                    console.log("from registration api", res);
+                    if (res.status === 200) {
+                        toast("Registration Successfull!!")
+                        setTimeout(() => {
+                            navigate('/login');
+                        }, 1000);
+                    }
+                }).catch((error) => {
+                    console.log(error);
+                })
             }
         },
     });
-
     return (<div>
         <section className="text-center">
             <div className="p-5 bg-image" style={{ backgroundImage: 'url("https://mdbootstrap.com/img/new/textures/full/171.jpg")', "height": "300px" }}>
@@ -43,29 +50,29 @@ const Signup = () => {
                             <h2 className="fw-bold mb-5">Sign up now</h2>
                             <form onSubmit={handleSubmit}>
                                 <div className="row">
-                                    <div className="col-md-6 mb-4">
+                                    <div className="form-outline mb-4">
                                         <div className="form-outline">
-                                            <label className="form-label" htmlFor="form3Example1">First name</label>
-                                            <input type="text" id="form3Example1" className="form-control" name="name" onBlur={handleBlur} value={values.name} onChange={handleChange}  />
+                                            <label className="form-label" htmlFor="form3Example1">Full Name</label>
+                                            <input type="text" id="form3Example1" className="form-control" name="name" onBlur={handleBlur} value={values.name} onChange={handleChange} />
                                             {errors.name && touched.name ? (<span className="text-danger">{errors.name}</span>) : null}
                                         </div>
                                     </div>
-                                    <div className="col-md-6 mb-4">
+                                    {/* <div className="col-md-6 mb-4">
                                         <div className="form-outline">
                                             <label className="form-label" htmlFor="form3Example2">Last name</label>
                                             <input type="text" id="form3Example2" className="form-control" name="name" onBlur={handleBlur} value={values.name} onChange={handleChange}  />
                                             {errors.name && touched.name ? (<span className="text-danger">{errors.name}</span>) : null}
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="form-outline mb-4">
                                     <label className="form-label" htmlFor="form3Example3">Email address</label>
-                                    <input type="email" id="form3Example3" className="form-control" name="email" onBlur={handleBlur} value={values.email} onChange={handleChange}  />
+                                    <input type="email" id="form3Example3" className="form-control" name="email" onBlur={handleBlur} value={values.email} onChange={handleChange} />
                                     {errors.email && touched.email ? (<span className="text-danger">{errors.email}</span>) : null}
                                 </div>
                                 <div className="form-outline mb-4">
                                     <label className="form-label" htmlFor="form3Example4">Password</label>
-                                    <input type="password" id="form3Example4" className="form-control" name="password" onBlur={handleBlur} value={values.password} onChange={handleChange}  />
+                                    <input type="password" id="form3Example4" className="form-control" name="password" onBlur={handleBlur} value={values.password} onChange={handleChange} />
                                     {errors.password && touched.password ? (<span className="text-danger">{errors.password}</span>) : null}
                                 </div>
                                 <div className="form-check d-flex justify-content-center mb-4">
@@ -100,7 +107,7 @@ const Signup = () => {
                     </div>
                 </div>
             </div>
-
+            <ToastContainer />
         </section>
 
     </div>);

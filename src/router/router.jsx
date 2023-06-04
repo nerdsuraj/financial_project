@@ -13,7 +13,6 @@ function reactRouter() {
                     <Route path="/" element={<Homepage/>} />
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/Login" element={<Login />} />
-                    {/* <Route path="/Dashboard" element={<Navbar />} /> */}
                 </Routes>
             </Router>
         </div>

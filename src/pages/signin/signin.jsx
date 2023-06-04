@@ -6,6 +6,8 @@ import './signin.css'
 import { useFormik } from 'formik';
 import { signinSchema } from "./signinSchema";
 import { UserSignIn } from "../../services/userservice";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Signin = () => {
@@ -23,10 +25,16 @@ const Signin = () => {
             console.log("values from sign in!!", values);
             if(values !== null){
                 UserSignIn(values).then((res)=>{
-                    console.log(res);
-                    // localStorage.setItem('token',res.data.data)
+                    console.log("from login api",res);
+                    if(res.status === 200){
+                        toast("Login Successfull!!")
+                        setTimeout(() => {
+                            navigate('/');
+                        }, 1000);
+                    }
+                }).catch((error)=>{
+                    console.log(error);
                 })
-                navigate('/');
             }
         }
     })
@@ -85,7 +93,7 @@ const Signin = () => {
                     </div>
                 </div>
             </div>
-
+            <ToastContainer />
         </section>
 
     </div>);
