@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { redirect, useNavigate } from 'react-router-dom';
 import './singup.css';
 import { useFormik } from "formik";
 import { signupSchema } from "./signupSchema";
@@ -38,6 +38,12 @@ const Signup = () => {
             }
         },
     });
+
+    function handleLogin() {
+        navigate('/Login');
+    }
+
+
     return (<div>
         <section className="text-center">
             <div className="p-5 bg-image" style={{ backgroundImage: 'url("https://mdbootstrap.com/img/new/textures/full/171.jpg")', "height": "300px" }}>
@@ -75,15 +81,14 @@ const Signup = () => {
                                     <input type="password" id="form3Example4" className="form-control" name="password" onBlur={handleBlur} value={values.password} onChange={handleChange} />
                                     {errors.password && touched.password ? (<span className="text-danger">{errors.password}</span>) : null}
                                 </div>
-                                <div className="form-check d-flex justify-content-center mb-4">
-                                    <input className="form-check-input me-2" type="checkbox" value="" id="form2Example33" />
-                                    <label className="form-check-label" htmlFor="form2Example33">
-                                        Subscribe to our newsletter
-                                    </label>
-                                </div>
                                 <button type="submit" className="btn btn-primary btn-block mb-4">
                                     Sign up
                                 </button>
+                                <div className="form-check d-flex justify-content-center mb-4">
+                                    <label className="form-check-label" htmlFor="form2Example33">
+                                        <span className="underline-on-hover" onClick={handleLogin} style={{"color": "#007bff",}} >already have an account <i class="fa fa-sign-in" aria-hidden="true"></i></span>
+                                    </label>
+                                </div>
                                 <div className="text-center">
                                     <p>or sign up with:</p>
                                     <button type="button" className="btn btn-link btn-floating mx-1">

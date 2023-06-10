@@ -18,21 +18,21 @@ const Signin = () => {
         password: 'Suraj@6200'
     }
 
-    const { handleSubmit, values,errors,touched,handleBlur,handleChange } = useFormik({
+    const { handleSubmit, values, errors, touched, handleBlur, handleChange } = useFormik({
         initialValues: FormInitialValues,
-        validationSchema:signinSchema,
+        validationSchema: signinSchema,
         onSubmit: (values) => {
             console.log("values from sign in!!", values);
-            if(values !== null){
-                UserSignIn(values).then((res)=>{
-                    console.log("from login api",res);
-                    if(res.status === 200){
+            if (values !== null) {
+                UserSignIn(values).then((res) => {
+                    console.log("from login api", res);
+                    if (res.status === 200) {
                         toast("Login Successfull!!")
                         setTimeout(() => {
                             navigate('/');
                         }, 1000);
                     }
-                }).catch((error)=>{
+                }).catch((error) => {
                     console.log(error);
                 })
             }
@@ -56,16 +56,24 @@ const Signin = () => {
                             <form onSubmit={handleSubmit}>
                                 <div className="form-outline mb-4">
                                     <label className="form-label" htmlFor="form3Example3">Email address</label>
-                                    <input type="email" id="form3Example3" className="form-control"  name="email" onBlur={handleBlur} value={values.email} onChange={handleChange}  />
+                                    <input type="email" id="form3Example3" className="form-control" name="email" onBlur={handleBlur} value={values.email} onChange={handleChange} />
                                     {errors.email && touched.email ? (<span className="text-danger">{errors.email}</span>) : null}
                                 </div>
                                 <div className="form-outline mb-4">
                                     <label className="form-label" htmlFor="form3Example4">Password</label>
-                                    <input type="password" id="form3Example4" className="form-control"  name="password" onBlur={handleBlur} value={values.password} onChange={handleChange} />
+                                    <input type="password" id="form3Example4" className="form-control" name="password" onBlur={handleBlur} value={values.password} onChange={handleChange} />
                                     {errors.password && touched.password ? (<span className="text-danger">{errors.password}</span>) : null}
                                 </div>
-                                <div style={{"marginRight":"72%","cursor":"pointer"}}>
-                                <a onClick={Login}>Don't have an account? Register here</a>
+                                <div style={{ "marginRight": "72%", "cursor": "pointer" }}>
+                                    <a onClick={Login}
+                                        style={{
+                                            textDecoration: "none",
+                                            position: "relative",
+                                            color: "#007bff",
+                                        }}
+                                        onMouseEnter={(e) => (e.target.style.textDecoration = "underline")}
+                                        onMouseLeave={(e) => (e.target.style.textDecoration = "none")}
+                                    >Don't have an account? Register here</a>
                                 </div>
                                 <button type="submit" className="btn btn-primary btn-block mb-4">
                                     Sign in
