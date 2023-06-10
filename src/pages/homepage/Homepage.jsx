@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Navbar from "../Navbar/navbar";
@@ -9,6 +10,8 @@ import Footer from "../Footer/footer";
 import { BusinessService } from "../../services/businessServices";
 
 const Homepage = () => {
+    //define a variable for store array data
+    const [newsData, setNewsData] = useState([]);
 
     useEffect(() => {
         get_news();
@@ -22,10 +25,16 @@ const Homepage = () => {
         try {
             const response = await BusinessService().getDataByPost(obj);
             console.log('response', response);
+            if (response.status === 200) {
+                setNewsData(response.data);
+            }else{
+                console.log('error while fetching news');
+            }
         } catch (error) {
             console.error('Error fetching news:', error);
         }
     }
+    console.log('newsData:', newsData.results);
 
     return (
         <>
