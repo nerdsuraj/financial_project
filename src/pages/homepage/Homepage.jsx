@@ -8,6 +8,7 @@ import Courses from "../Courses";
 import Webinar from "../Webinar";
 import Footer from "../Footer/footer";
 import { BusinessService } from "../../services/businessServices";
+import Defaultcards from "../Defaultcards/DefaultCards";
 
 const Homepage = () => {
     //define a variable for store array data
@@ -47,12 +48,14 @@ const Homepage = () => {
                     </div>
                 </div>
             </div>
-            <Courses />
-            <Webinar />
+            <Defaultcards />
+            {/* <Courses />
+            <Webinar /> */}
             <div className="container-lg py-2">
                 <hr style={{ "color": "red" }}></hr>
                 {/* <Footer/> */}
             </div>
+            <Footer/>
         </>
     )
 }
