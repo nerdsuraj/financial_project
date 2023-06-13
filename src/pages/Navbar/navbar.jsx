@@ -1,10 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-
+/* eslint-disable no-unused-vars */
 //import first image as logo from images folder inside assets
 import logo from '../../assets/images/computer-icons-chart-analytics-financial-web-analytics-icon.jpg';
 import search from '../../assets/images/54481.png';
 import './navbar.css';
 import user from '../../assets/images/user.png';
+import { Link } from "react-router-dom";
+
+
 
 const Navbar = () => {
 
@@ -32,13 +35,13 @@ const Navbar = () => {
 
                     <ul className="navbar-nav px-4">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Products</a>
+                            <Link className="nav-link" to="/aboutUs">Products</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Pricing</a>
+                            <Link className="nav-link" to="/aboutUs">Pricing</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">About Us</a>
+                            <Link className="nav-link" to="/aboutUs">About Us</Link>
                         </li>
                         <li className="nav-item" style={{ position: 'relative' }}>
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
