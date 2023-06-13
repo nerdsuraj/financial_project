@@ -14,8 +14,9 @@ const Signup = () => {
 
     const FormInitialValues = {
         name: 'suraj',
+        phone: '1234567890',
         email: 'soorajkrpandit@gmail.com',
-        password: 'Suraj@12345',
+        password: 'dinesh@12345',
     };
 
     const { handleSubmit, values, errors, touched, handleBlur, handleChange } = useFormik({
@@ -77,6 +78,11 @@ const Signup = () => {
                                     {errors.email && touched.email ? (<span className="text-danger">{errors.email}</span>) : null}
                                 </div>
                                 <div className="form-outline mb-4">
+                                    <label className="form-label" htmlFor="form3Example5">Phone Number</label>
+                                    <input type="number" id="form3Example5" className="form-control" name="phone" onBlur={handleBlur} value={values.phone} onChange={handleChange} />
+                                    {errors.phone && touched.phone ? (<span className="text-danger">{errors.phone}</span>) : null}
+                                </div>
+                                <div className="form-outline mb-4">
                                     <label className="form-label" htmlFor="form3Example4">Password</label>
                                     <input type="password" id="form3Example4" className="form-control" name="password" onBlur={handleBlur} value={values.password} onChange={handleChange} />
                                     {errors.password && touched.password ? (<span className="text-danger">{errors.password}</span>) : null}
@@ -86,7 +92,7 @@ const Signup = () => {
                                 </button>
                                 <div className="form-check d-flex justify-content-center mb-4">
                                     <label className="form-check-label" htmlFor="form2Example33">
-                                        <span className="underline-on-hover" onClick={handleLogin} style={{"color": "#007bff",}} >already have an account <i class="fa fa-sign-in" aria-hidden="true"></i></span>
+                                        <span className="underline-on-hover" onClick={handleLogin} style={{"color": "#007bff",}} >already have an account <i className="fa fa-sign-in" aria-hidden="true"></i></span>
                                     </label>
                                 </div>
                                 <div className="text-center">

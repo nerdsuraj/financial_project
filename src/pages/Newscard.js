@@ -9,9 +9,6 @@ const Newscard = ({ title, url, description, img_url, trainer, avgRating }) => {
             : (<img src={dummy_img} width="100%" height="100%" alt="dummyimage" />)}
             </div>
             <div className="text-dark">{title}</div>
-            {/* <span>{description}</span><br />
-            <span>Trainer: {trainer}</span><br />
-            <span>Rating : {avgRating}</span> */}
         </Link>
     )
 }

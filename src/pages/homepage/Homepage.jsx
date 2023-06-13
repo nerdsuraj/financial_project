@@ -12,30 +12,38 @@ import Defaultcards from "../Defaultcards/DefaultCards";
 
 const Homepage = () => {
     //define a variable for store array data
-    const [newsData, setNewsData] = useState([]);
+    // const [newsData, setNewsData] = useState([]);
 
-    useEffect(() => {
-        get_news();
-    }, []);
+    // useEffect(() => {
+    //     get_news();
+    // }, []);
 
-    const get_news = async () => {
-        const obj = {
-            "email": "soorajkrpandit@gmail.com",
-            "password": "Suraj@12345"
-        }
-        try {
-            const response = await BusinessService().getDataByPost(obj);
-            console.log('response', response);
-            if (response.status === 200) {
-                setNewsData(response.data);
-            }else{
-                console.log('error while fetching news');
-            }
-        } catch (error) {
-            console.error('Error fetching news:', error);
-        }
-    }
-    console.log('newsData:', newsData.results);
+    // const get_news = async () => {
+    //     let obj = {};
+    //     let isLogin = localStorage.getItem('login');
+    //     console.log('isLogin', isLogin);
+    //     if (isLogin === 'true') {
+    //         const email = localStorage.getItem('email');
+    //         obj = {
+    //             "email": email
+    //         }
+    //     }else{
+    //         obj = {
+    //             "email": "suraj"
+    //         }
+    //     }
+    //     try {
+    //         console.log('obj', obj);
+    //         const response = await BusinessService().getDataByPost(obj);
+    //         console.log('response', response);
+    //         if (response.status === 200) {
+    //             setNewsData(response.data);
+    //         }
+    //     } catch (error) {
+    //         console.error('Error fetching news:', error);
+    //     }
+    // }
+    // console.log('newsData:', newsData.results);
 
     return (
         <>
@@ -55,7 +63,7 @@ const Homepage = () => {
                 <hr style={{ "color": "red" }}></hr>
                 {/* <Footer/> */}
             </div>
-            <Footer/>
+            <Footer />
         </>
     )
 }

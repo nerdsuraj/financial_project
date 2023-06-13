@@ -8,14 +8,20 @@ import { signinSchema } from "./signinSchema";
 import { UserSignIn } from "../../services/userservice";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useState, useEffect } from "react";
 
 
 const Signin = () => {
     let navigate = useNavigate();
 
+
+    // useEffect(() => {
+    //     localStorage.clear();
+    // }, []);
+
     const FormInitialValues = {
         email: 'soorajkrpandit@gmail.com',
-        password: 'Suraj@6200'
+        password: 'Suraj@12345'
     }
 
     const { handleSubmit, values, errors, touched, handleBlur, handleChange } = useFormik({
@@ -28,6 +34,10 @@ const Signin = () => {
                     console.log("from login api", res);
                     if (res.status === 200) {
                         toast("Login Successfull!!")
+                        let store_local = res.config.data;
+                        store_local = JSON.parse(store_local);
+                        localStorage.setItem('email', store_local.email);
+                        localStorage.setItem('login',true);
                         setTimeout(() => {
                             navigate('/');
                         }, 1000);

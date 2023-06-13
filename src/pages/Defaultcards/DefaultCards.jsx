@@ -1,46 +1,83 @@
+/* eslint-disable no-unused-vars */
 import Newscard from "../Newscard";
 import { useEffect, useState } from "react";
 import { BusinessService } from "../../services/businessServices";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
+import "./defaultCards.css";
 
 const Defaultcards = () => {
-    //state variable to store t
     const [cards, setCards] = useState([]);
+    const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+
+    const pageSize = 12; // Number of cards to show per page
+    const [currentPage, setCurrentPage] = useState(1); // Current page number
+
+    // Calculate the indexes for the current page
+    const startIndex = (currentPage - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+
+    // Get the cards for the current page
+    const currentCards = cards.slice(startIndex, endIndex);
+
+    useEffect(() => {
+        get_news();
+    }, []);
+
     const get_news = async () => {
-        const obj = {
-            "email": "soorajkrpandit@gmail.com",
-            "password": "Suraj@12345"
+        let obj = {};
+        let isLogin = localStorage.getItem('login');
+        setIsUserLoggedIn(isLogin === 'true');
+        if (isLogin === 'true') {
+            const email = localStorage.getItem('email');
+            obj = {
+                "email": email
+            }
+        } else {
+            obj = {
+                "email": "suraj"
+            }
         }
         try {
+            console.log('obj', obj);
             const response = await BusinessService().getDataByPost(obj);
-            console.log('defaultcards', response?.data?.results.slice(0, 12));
-            setCards(response?.data?.results.slice(0, 12));
-
+            console.log('response', response);
+            if (response.status === 200) {
+                setCards(response.data.results);
+            }
         } catch (error) {
             console.error('Error fetching news:', error);
         }
     }
-
-    useEffect(() => {
-        get_news();
-    }, [])
+    console.log('newsData:', cards.results);
 
     return (
         <div className="container-lg py-2">
             <h2 className="display-6">Check following curated news based on your interest</h2>
             <div className="card-container">
                 {
-                    cards.map((card) => {
+                    currentCards.map((card, index) => {
                         return (
-                            <Newscard {...card} />
+                            <Newscard key={index} {...card} />
                         )
                     })
                 }
             </div>
-            <div className= "container-lg mt-3 text-end">
-            <Link to="/signup" >
-                <button className="btn btn-sm btn-warning">Sign up for more news...</button>
-            </Link>
+            {isUserLoggedIn && (
+                <div className="pagination-container">
+                    {currentPage > 1 && (
+                        <button className="pagination-button" onClick={() => setCurrentPage(currentPage - 1)}>Previous</button>
+                    )}
+                    {endIndex < cards.length && (
+                        <button className="pagination-button" onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
+                    )}
+                </div>
+            )}
+            <div className="container-lg mt-3 text-end">
+                {!isUserLoggedIn && (
+                    <Link to="/signup">
+                        <button className="btn btn-sm btn-warning">Sign up for more news...</button>
+                    </Link>
+                )}
             </div>
         </div>
     )
