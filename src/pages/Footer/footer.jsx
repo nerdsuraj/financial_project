@@ -133,7 +133,7 @@ function footer() {
                 © 2020 Copyright:
                 <a className="text-white" href='https://paisahipaisahoga.in/'>
                     paisahipaisahoga.in
-                </a>
+            </a>
             </div>
         </div>)
 }
