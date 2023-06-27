@@ -17,8 +17,8 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
-            <div className="container">
+        <nav className="navbar navbar-expand-sm custom_nav navbar-dark sticky-top">
+            <div className="container-fluid">
                 <a className="navbar-brand" href="#">
                     <img src={logo} alt="Avatar Logo" style={{ width: '40px' }} className="rounded-pill" />
                 </a>
@@ -35,19 +35,22 @@ const Navbar = () => {
 
                     <ul className="navbar-nav px-4">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/aboutUs">Products</Link>
+                            <Link className="nav-link" to="/aboutUs">Our Work</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/aboutUs">Pricing</Link>
+                            <Link className="nav-link" to="/aboutUs">About us</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/aboutUs">About Us</Link>
+                            <Link className="nav-link" to="/aboutUs">Resources</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/aboutUs">Connect with us</Link>
                         </li>
                         <li className="nav-item" style={{ position: 'relative' }}>
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                                 <img src={user} alt="user" style={{ width: '25px' }} />
                             </a>
-                            <ul className="dropdown-menu menu">
+                            <ul className="dropdown-menu custom_menu">
                                 <li><a className="dropdown-item" href="#">Edit Profile</a></li>
                                 <li><a className="dropdown-item" href="#">Upgrade</a></li>
                                 <li onClick={logout} ><a className="dropdown-item" href="#">Log Out</a></li>

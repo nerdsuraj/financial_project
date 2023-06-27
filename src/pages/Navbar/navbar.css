@@ -22,6 +22,10 @@
     transform:translateY(-50%);
     cursor:pointer;
 }
-.menu{
-    left:-25%!important;
+.custom_menu{
+position : absolute!important;
+left : -100px!important;
+}
+.custom_nav{
+    background-color:#004792;
 }

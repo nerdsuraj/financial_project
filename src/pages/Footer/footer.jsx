@@ -13,7 +13,7 @@ import {
 
 function footer() {
     return (
-        <div className = "bg-dark text-white">
+        <div className="text-white footer">
             {/* <MDBFooter className='bg-light text-center text-white'>
                 <MDBContainer className='p-4 pb-0'>
                     <section className='mb-4'>
@@ -90,16 +90,46 @@ function footer() {
                     </a>
                 </div>
             </MDBFooter> */}
-            <div className = "footer_title">
-                <div className ="title_text">
+            <div className="footer_title fadingBackground">
+                <div className="title_text">
                     <h3>Subscribe to our Newsletter today!!!</h3>
                 </div>
-                <div className ="title_form d-flex align-items-center">
-                    <input type="email" name="email" placeholder="Your Email Address"/>
-                    <input type="button" className="bg-success"  value="SUBMIT"/>
+                <div className="title_form d-flex align-items-center">
+                    <input type="email" name="email" placeholder="Your Email Address" />
+                    <input type="button" className="bg-success" value="SUBMIT" />
                 </div>
             </div>
-            <div className='text-center p-3'>
+            <div className="category_wrapper">
+                <div class="text-center">
+                    <h5>OUR WORK</h5>
+                    <h6>Who we Serve</h6>
+                    <h6>Our Approach</h6>
+                    <h6>Our Impact</h6>
+                    <h6>Partners</h6>
+                    <h6>Where We Work</h6>
+                </div>
+                <div className="text-center">
+                    <h5>ABOUT US</h5>
+                    <h6>Mission</h6>
+                    <h6>Values</h6>
+                    <h6>Awards</h6>
+                    <h6>Contact</h6>
+                    <h6>Team</h6>
+                </div>
+                <div className="text-center">
+                    <h5>RESOURCES</h5>
+                    <h6>News & Media</h6>
+                    <h6>Impact Reports</h6>
+                    <h6>Publications</h6>
+                </div>
+                <div className="text-center">
+                    <h5>CONNECT WITH US</h5>
+                    <i class="fa-brands fa-facebook mx-1"></i>
+                    <i class="fa-brands fa-linkedin mx-1"></i>
+                    <i class="fa-brands fa-google mx-1"></i>
+                    </div>
+            </div>
+            <div className='text-center p-3 fadingBackground'>
                 © 2020 Copyright:
                 <a className="text-white" href='https://paisahipaisahoga.in/'>
                     paisahipaisahoga.in
