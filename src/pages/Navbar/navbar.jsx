@@ -35,17 +35,17 @@ const Navbar = () => {
 
                     <ul className="navbar-nav px-4">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/aboutUs">Our Product</Link>
+                            <Link className="nav-link text-white" to="/aboutUs">Our Products </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/aboutUs">About us</Link>
+                            <Link className="nav-link text-white" to="/aboutUs">About us</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/aboutUs">Resources</Link>
+                            <Link className="nav-link text-white" to="/aboutUs">Resources</Link>
                         </li>
-                        {/* <li className="nav-item">
-                            <Link className="nav-link" to="/aboutUs">Connect with us</Link>
-                        </li> */}
+                        <li className="nav-item">
+                            <Link className="nav-link text-white" to="/aboutUs">Connect with us</Link>
+                        </li>
                         <li className="nav-item" style={{ position: 'relative' }}>
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                                 <img src={user} alt="user" style={{ width: '25px' }} />

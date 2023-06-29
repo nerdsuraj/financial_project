@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { BusinessService } from "../../services/businessServices";
 import { Link } from "react-router-dom"
 import "./defaultCards.css";
+import Shimmer from "../Shimmer";
 
 const Defaultcards = () => {
     const [cards, setCards] = useState([]);
@@ -53,7 +54,7 @@ const Defaultcards = () => {
     return (
         <div className="container-lg py-2">
             <h2 className="display-6">Check following curated news based on your interest</h2>
-            <div className="card-container">
+            {cards.length!==0 ? <div className="card-container">
                 {
                     currentCards.map((card, index) => {
                         return (
@@ -61,7 +62,7 @@ const Defaultcards = () => {
                         )
                     })
                 }
-            </div>
+            </div> : <Shimmer/>}
             {isUserLoggedIn && (
                 <div className="pagination-container">
                     {currentPage > 1 && (
@@ -75,7 +76,7 @@ const Defaultcards = () => {
             <div className="container-lg mt-3 text-end">
                 {!isUserLoggedIn && (
                     <Link to="/signup">
-                        <button className="btn btn-sm btn-warning">Sign up for more news...</button>
+                        <button className="btn btn btn-danger">Sign Up For More News...</button>
                     </Link>
                 )}
             </div>

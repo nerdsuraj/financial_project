@@ -11,7 +11,7 @@
 }
 
 .footer{
-    background-color:#004792;
+    background: linear-gradient(to right, #56ccf2, #2f80ed);
 }
 .title_text, .title_form{
     width:50%;
