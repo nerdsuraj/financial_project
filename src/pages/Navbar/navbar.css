@@ -27,5 +27,6 @@ position : absolute!important;
 left : -100px!important;
 }
 .custom_nav{
-    background-color:#004792;
+    background: linear-gradient(to right, #56ccf2, #2f80ed);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

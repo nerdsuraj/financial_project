@@ -22,10 +22,10 @@ const Navbar = () => {
                 <a className="navbar-brand" href="#">
                     <img src={logo} alt="Avatar Logo" style={{ width: '40px' }} className="rounded-pill" />
                 </a>
-                <div className="searchContainer">
+                {/* <div className="searchContainer">
                     <input placeholder="Enter search text" className="custom_input" />
                     <img src={search} className="search" height="20px" alt="Search" />
-                </div>
+                </div> */}
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <span className="navbar-toggler-icon"></span>
@@ -35,16 +35,16 @@ const Navbar = () => {
 
                     <ul className="navbar-nav px-4">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/aboutUs">Our Work</Link>
+                            <Link className="nav-link text-white" to="/aboutUs">Our Products </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/aboutUs">About us</Link>
+                            <Link className="nav-link text-white" to="/aboutUs">About us</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/aboutUs">Resources</Link>
+                            <Link className="nav-link text-white" to="/aboutUs">Resources</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/aboutUs">Connect with us</Link>
+                            <Link className="nav-link text-white" to="/aboutUs">Connect with us</Link>
                         </li>
                         <li className="nav-item" style={{ position: 'relative' }}>
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
