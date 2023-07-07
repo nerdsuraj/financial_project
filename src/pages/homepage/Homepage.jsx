@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-distracting-elements */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -11,10 +12,44 @@ import { BusinessService } from "../../services/businessServices";
 import Defaultcards from "../Defaultcards/DefaultCards";
 
 const Homepage = () => {
- 
+
+    let [margueeData, setMargueeData] = useState([]);
+
+    useEffect(() => {
+        get_marguee_data();
+    }, []);
+
+    const get_marguee_data = async () => {
+        try {
+            const response = await BusinessService().getMarqueeData();
+            console.log('response from the marguee list', response);
+            if (response.status === 200) {
+                console.log('response.data', response.data);
+                setMargueeData(response.data);
+
+            }
+        } catch (error) {
+            console.error('Error fetching news:', error);
+        }
+
+    }
+    console.log('margueeData', margueeData);
+
+
     return (
         <>
             <Navbar />
+            <div className="marquee-container">
+                <marquee className="marquee-content">
+                    Today's Updated: 
+                    {margueeData.map((item, index) => (
+                        <span key={index}>
+                            {item.name}: {item.ltp} {item.up_or_down} {item.percentage}%
+                            {index !== margueeData.length - 1 && ' | '}
+                        </span>
+                    ))}
+                </marquee>
+            </div>
             <div>
                 {/* <div className="bulletin text-center">
                     <div className="bulletin-content">

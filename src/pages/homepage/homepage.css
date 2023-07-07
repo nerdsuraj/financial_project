@@ -1,23 +1,37 @@
-.homebody{
+.homebody {
     /* border:1px solid red; */
     /* css property to give available height*/
-    height:100vh;
-    background-repeat:no-repeat;
-    background-size: cover; 
-    padding:0px 2%;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0px 2%;
 }
 
-.bulletin{
-    background-color:rgba(0, 0, 0, 0.1);
-    width:100%;
+.bulletin {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
     /* max-width:800px; */
-    margin:auto;
-    padding:10px;
-    font-weight:bold;
+    margin: auto;
+    padding: 10px;
+    font-weight: bold;
     /* border-radius:13px; */
 }
-.bulletin-content{
+
+.bulletin-content {
     width: 100%;
     max-width: 400px;
     margin: auto;
+}
+
+.marquee-container {
+    display: flex;
+    align-items: center;
+}
+
+.marquee-label {
+    margin-right: 10px;
+}
+
+.marquee-content {
+    flex: 1;
 }
