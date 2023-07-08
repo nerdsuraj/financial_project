@@ -11,7 +11,7 @@ import {
     MDBBtn
 } from 'mdb-react-ui-kit';
 
-function footer() {
+function Footer() {
     return (
         <div className="text-white footer">
             {/* <MDBFooter className='bg-light text-center text-white'>
@@ -138,4 +138,4 @@ function footer() {
         </div>)
 }
 
-export default footer
+export default Footer;

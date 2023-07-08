@@ -97,9 +97,56 @@
   height:calc(100vh - 60px);
 }
 
+.cardWrapper{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background-color:antiquewhite;
+  border-radius:30px;
+  padding:20px;
+  margin-bottom:20px;
+}
+
+.imgWrapper{
+  width:100%;
+  max-width:300px;
+  height:300px;
+  overflow-y:clip;
+  border-radius:50%;
+}
+
+.descriptionWrapper{
+  width:70%
+}
+
+.profileWrapper{
+  margin:40px;
+}
+
 @media only screen and (max-width:992px){
   .custom_carousel{
     height:auto;
+  }
+}
+
+@media only screen and (max-width:768px){
+  .custom_carousel{
+    height:auto;
+  }
+  .cardWrapper{
+    flex-direction:column;
+  }
+  .descriptionWrapper{
+    width:100%;
+  }
+}
+
+@media only screen and (max-width:576px){
+  .profileWrapper{
+    margin:0px;
+  }
+  .cardWrapper{
+    border-radius:0px;
   }
 }
 
