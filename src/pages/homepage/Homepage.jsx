@@ -9,20 +9,14 @@ import Webinar from "../Webinar";
 import Footer from "../Footer/footer";
 import { BusinessService } from "../../services/businessServices";
 import Defaultcards from "../Defaultcards/DefaultCards";
+import Carousel from "../Carousel";
 
 const Homepage = () => {
  
     return (
         <>
             <Navbar />
-            <div>
-                {/* <div className="bulletin text-center">
-                    <div className="bulletin-content">
-                        <p className="text-secondary">WELCOME TO BULLETIN</p>
-                        <p className="fs-3">Craft narratives ✍️ that ignite <span className="text-danger">inspiration</span> 💡,<span className="text-danger">knowledge</span> 📙, and <span className="text-danger">entertainment</span> 🎬</p>
-                    </div>
-                </div> */}
-            </div>
+            <Carousel/>
             <Defaultcards />
             {/* <Courses />
             <Webinar /> */}

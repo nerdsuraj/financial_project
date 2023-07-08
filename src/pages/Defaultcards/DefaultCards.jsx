@@ -62,7 +62,7 @@ const Defaultcards = () => {
                         )
                     })
                 }
-            </div> : <Shimmer/>}
+            </div> : ""}
             {isUserLoggedIn && (
                 <div className="pagination-container">
                     {currentPage > 1 && (

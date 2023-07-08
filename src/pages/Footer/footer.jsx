@@ -92,15 +92,15 @@ function footer() {
             </MDBFooter> */}
             <div className="footer_title fadingBackground">
                 <div className="title_text">
-                    <h3>Subscribe to our Newsletter today!!!</h3>
+                    <h5>Don't miss a beat in the financial world! Share your WhatsApp number for instant updates.</h5>
                 </div>
                 <div className="title_form d-flex align-items-center">
-                    <input type="email" name="email" placeholder="Your Email Address" />
+                    <input type="text" name="number" placeholder="Your Whatapp number" />
                     <input type="button" className="bg-success" value="SUBMIT" />
                 </div>
             </div>
             <div className="category_wrapper">
-                <div class="text-center">
+                <div className="text-center">
                     <h5>OUR WORK</h5>
                     <h6>Who we Serve</h6>
                     <h6>Our Approach</h6>
@@ -124,16 +124,16 @@ function footer() {
                 </div>
                 <div className="text-center">
                     <h5>CONNECT WITH US</h5>
-                    <i class="fa-brands fa-facebook mx-1"></i>
-                    <i class="fa-brands fa-linkedin mx-1"></i>
-                    <i class="fa-brands fa-google mx-1"></i>
-                    </div>
+                    <i className="fa-brands fa-facebook mx-1"></i>
+                    <i className="fa-brands fa-linkedin mx-1"></i>
+                    <i className="fa-brands fa-google mx-1"></i>
+                </div>
             </div>
             <div className='text-center p-3 fadingBackground'>
                 © 2020 Copyright:
                 <a className="text-white" href='https://paisahipaisahoga.in/'>
                     paisahipaisahoga.in
-            </a>
+                </a>
             </div>
         </div>)
 }

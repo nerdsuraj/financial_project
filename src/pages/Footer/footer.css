@@ -1,8 +1,8 @@
 .footer_title{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    align-items:center;
+     display:flex;
+    flex-direction:column;
+    justify-content:center; 
+    align-items:center; 
     padding:20px;
 }
 
@@ -13,12 +13,13 @@
 .footer{
     background: linear-gradient(to right, #56ccf2, #2f80ed);
 }
-.title_text, .title_form{
+/* .title_text, .title_form{
     width:50%;
-}
+} */
 
 .title_form input:nth-child(1){
-    width:60%;
+    width:100%;
+    max-width:350px;
     padding:5px 15px;
     border-radius: 16px 0px 0px 16px;
     border:0px;
