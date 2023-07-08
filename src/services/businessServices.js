@@ -17,7 +17,7 @@ export function BusinessService() {
 
     const get_amazon_products = (obj) => {
         console.log("object to send the data to the api", obj);
-        return axios.post("http://206.189.130.235:5050/get_amazon_products")
+        return axios.post("http://206.189.130.235:5050/get_amazon_products",obj)
 
     }
 
