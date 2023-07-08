@@ -42,16 +42,16 @@ const Homepage = () => {
             <Navbar />
             <div className="marquee-container">
                 <marquee className="marquee-content">
-                    Today's Updated: 
+                    <span className="market-label">Today's Market:&nbsp;&nbsp;&nbsp; </span>
                     {margueeData.map((item, index) => (
                         <span key={index}>
-                            {item.name}: {item.ltp} {item.up_or_down} {item.percentage}%
+                            {item.name}*: {item.ltp} {item.percentage}% {item.up_or_down === 'down' ? <span className="down">down</span> : <span className="up">up</span>} 
                             {index !== margueeData.length - 1 && ' | '}
                         </span>
                     ))}
                 </marquee>
             </div>
-            <Carousel/>
+            <Carousel />
             <Defaultcards />
             {/* <Courses />
             <Webinar /> */}

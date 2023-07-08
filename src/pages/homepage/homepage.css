@@ -23,15 +23,16 @@
     margin: auto;
 }
 
-.marquee-container {
-    display: flex;
-    align-items: center;
-}
-
-.marquee-label {
-    margin-right: 10px;
-}
-
 .marquee-content {
-    flex: 1;
+    background-color: #24243e;
+    color: white;
+    font-weight: bold;
+}
+
+.marquee-content .down {
+    color: red;
+}
+
+.marquee-content .up {
+    color: green;
 }
