@@ -3,74 +3,33 @@ import React from "react";
 import "./aboutus.css"
 import suraj from "../../assets/images/suraj.jpeg"
 import Akshay from "../../assets/images/akshay.jpeg"
-import nikhil from "../../assets/images/nikhil.jpeg"
+import nikhil from "../../assets/images/nikhil.jpg"
+import Navbar from "../Navbar/navbar";
+import Footer from "../Footer/Footer";
+import ProfileCards from "../ProfileCards";
+import Nikhil from "../../assets/images/nikhil.jpg"
 
 
 const AboutUs = () => {
 
     return (
-        <div className="page-container">
-            <div className="connect-message">
-                <h2>Connect with us!</h2>
+        <>
+            <Navbar/>
+            <div className="team_wrapper">
+                <h1 className="team_tag">Meet our young and enthusiastic team of developers & creators</h1>
             </div>
-            <div className="about-us">
-                <div className="section">
-                    <div className="vertical-line"></div>
-                    <div className="content">
-                        <div className="image-container">
-                            <img src={Akshay} alt="Akshay" className="profile-image" />
-                        </div>
-                        <h2>Akshay Rewadkar</h2>
-                        <p>Some details about Akshay Rewadkar:</p>
-                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ullam facere soluta, laboriosam deserunt autem sapiente qui pariatur ipsa nobis odit consequatur iure quibusdam cum quo in, neque repudiandae! Excepturi, earum amet.</h4>
-                        <h3>Skills:</h3>
-                        <ul>
-                            <li>python</li>
-                            <li>Web Scraping</li>
-                            <li>Stock Manager</li>
-                        </ul>
-                        <button className="connect-button">Connect with Akshay</button>
-                    </div>
-                </div>
-                <div className="section">
-                    <div className="vertical-line"></div>
-                    <div className="content">
-                        <div className="image-container">
-                            <img src={nikhil} alt="Nikhil" className="profile-image" />
-                        </div>
-                        <h2>Nikhil Mahadik</h2>
-                        <p>Some details about Nikhil Mahadik:</p>
-                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ullam facere soluta, laboriosam deserunt autem sapiente qui pariatur ipsa nobis odit consequatur iure quibusdam cum quo in, neque repudiandae! Excepturi, earum amet.</h4>
-                        <h3>Skills:</h3>
-                        <ul>
-                            <li>Angular</li>
-                            <li>React</li>
-                            <li>Bootstrap</li>
-                        </ul>
-                        <button className="connect-button">Connect with Nikhil</button>
-                    </div>
-                </div>
-                <div className="section">
-                    <div className="vertical-line"></div>
-                    <div className="content">
-                        <div className="image-container">
-                            <img src={suraj} alt="Suraj" className="profile-image" />
-                        </div>
-                        <h2>Suraj Kumar</h2>
-                        <p>Some details about Suraj Kumar:</p>
-                        <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ullam facere soluta, laboriosam deserunt autem sapiente qui pariatur ipsa nobis odit consequatur iure quibusdam cum quo in, neque repudiandae! Excepturi, earum amet.</h4>
-                        <h3>Skills:</h3>
-                        <ul>
-                            <li>MEAN Stack Developer</li>
-                            <li>React Developer</li>
-                            <li>Full stack</li>
-                        </ul>
-                        <button className="connect-button">Connect with Suraj</button>
-                    </div>
-                </div>
+            <div className="profileWrapper">
+                <ProfileCards image_link={Nikhil} 
+                name="Nikhil Mahadik" 
+                role="Frontend developer" 
+                description="Give him design and he will write code for you that's all about him. Sports fanatic, music lover 
+                            and traveller are few words which describe him. His name means 'complete without boundaries' and he is just the same.
+                            Unique thing about him is that he always managed to get perfect percentage in SSC, HSC & graduation (whole numbers).
+                            He is definitely important part of our team."/> 
             </div>
-        </div>)
-
+            <Footer/>
+        </>
+    )
 }
 
 export default AboutUs; 

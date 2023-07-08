@@ -19,7 +19,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-sm custom_nav navbar-dark sticky-top">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#" style={{marginLeft: '4%'}}>
+                <a className="navbar-brand" href="#" style={{ marginLeft: '4%' }}>
                     <img src={logo} alt="Avatar Logo" style={{ width: '40px' }} className="rounded-pill" />
                 </a>
                 {/* <div className="searchContainer">
@@ -35,14 +35,17 @@ const Navbar = () => {
 
                     <ul className="navbar-nav px-4">
                         <li className="nav-item">
+                            <Link className="nav-link text-white" to="/">Home </Link>
+                        </li>
+                        <li className="nav-item">
                             <Link className="nav-link text-white" to="/aboutUs">Our Products </Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link text-white" to="/aboutUs">About us</Link>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                             <Link className="nav-link text-white" to="/aboutUs">Resources</Link>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
                             <Link className="nav-link text-white" to="/aboutUs">Connect with us</Link>
                         </li>

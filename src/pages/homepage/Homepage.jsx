@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import "./homepage.css";
 import Courses from "../Courses";
 import Webinar from "../Webinar";
-import Footer from "../Footer/footer";
+import Footer from "../Footer/Footer";
 import { BusinessService } from "../../services/businessServices";
 import Defaultcards from "../Defaultcards/DefaultCards";
 import Carousel from "../Carousel";
