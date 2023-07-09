@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import "./homepage.css";
 import Courses from "../Courses";
 import Webinar from "../Webinar";
-import Footer from "../Footer/footer";
+import Footer from "../Footer/Footer";
 import { BusinessService } from "../../services/businessServices";
 import Defaultcards from "../Defaultcards/DefaultCards";
 import Carousel from "../Carousel";
@@ -45,7 +45,7 @@ const Homepage = () => {
                     <span className="market-label">Today's Market:&nbsp;&nbsp;&nbsp; </span>
                     {margueeData.map((item, index) => (
                         <span key={index}>
-                            {item.name}*: {item.ltp} {item.percentage}% {item.up_or_down === 'down' ? <span className="down">down</span> : <span className="up">up</span>} 
+                            {item.name}*: {item.ltp} {item.percentage}% {item.up_or_down === 'down' ? <span className="down">🔻</span> : <span className="up">🔺</span>} 
                             {index !== margueeData.length - 1 && ' | '}
                         </span>
                     ))}

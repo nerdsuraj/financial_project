@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
 
 import React from "react";
-import Footer from "../Footer/footer";
+import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/navbar";
 import "./product.css";
 import { useState, useEffect } from "react";
 import { BusinessService } from "../../services/businessServices";
+import Productcard from "../Productcard";
 
 
 const Productpage = () => {
@@ -50,10 +51,9 @@ const Productpage = () => {
     return (
         <>
             <Navbar />
-            <div>
-                <div>
-                    <label htmlFor="category">Select Category:</label>
-                    <select id="category" value={selectedCategory} onChange={handleCategoryChange} className="blue-dropdown">
+                <div className="m-2">
+                    {/* <label htmlFor="category">Select Category:</label> */}
+                    <select id="category" value={selectedCategory} onChange={handleCategoryChange}  className="p-1">
                         <option value=""> Select Category </option>
                         {categorylist.map((category, index) => (
                             <option key={index} value={category}>
@@ -62,7 +62,11 @@ const Productpage = () => {
                         ))}
                     </select>
                 </div>
-            </div>
+                <div className="container-lg card-container mb-5">
+                {cardList.map((card,index)=>(
+                    <Productcard {...card} key={index}/>
+                ))}    
+                </div>
             <Footer />
         </>
     );

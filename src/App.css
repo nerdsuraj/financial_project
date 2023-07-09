@@ -51,7 +51,9 @@
   cursor:pointer;
   position:relative;
   background: linear-gradient(to right, #232526, #414345);
-  color : white;}
+  color : white;
+}
+
 
 .newscard:hover{
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -80,6 +82,15 @@
 .title {
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding:5px;
+}
+
+.title_1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
