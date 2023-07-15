@@ -8,7 +8,6 @@ export function BusinessService() {
 
     const saveFileToS3 = (apiPath, formData) => {
         console.log("formData", formData);
-        // return axios.post("",Obj)
     }
 
     const getMarqueeData = () => {
@@ -16,10 +15,14 @@ export function BusinessService() {
     }
 
     const get_amazon_products = (obj) => {
-        console.log("object to send the data to the api", obj);
         return axios.post("http://206.189.130.235:5050/get_amazon_products",obj)
 
     }
 
-    return { getDataByPost, saveFileToS3 , getMarqueeData ,get_amazon_products }
+    const whatsapp_number = (obj) => {
+        console.log("object to whatsapp number!!!", obj);
+        return axios.post("http://206.189.130.235:5050/store_mobile_number",obj);
+    }
+
+    return { getDataByPost, saveFileToS3 , getMarqueeData ,get_amazon_products,whatsapp_number }
 }

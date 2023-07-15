@@ -1,103 +1,57 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React from "react";
 import './footer.css'
+import { useFormik } from 'formik';
+import { NumberSchema } from "./phoneSchema";
+import { useState, useEffect } from "react";
+import { BusinessService } from "../../services/businessServices";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-import {
-    MDBFooter,
-    MDBContainer,
-    MDBCol,
-    MDBRow,
-    MDBIcon,
-    MDBBtn
-} from 'mdb-react-ui-kit';
+const Footer = () => {
 
-function Footer() {
+    const [mobile_number, setmobile_number] = useState('');
+
+    const FormInitialValues = {
+        mobile_number: '',
+    }
+
+    const { handleSubmit, values, errors, touched, handleBlur, handleChange } = useFormik({
+        initialValues: FormInitialValues,
+        validationSchema: NumberSchema,
+        onSubmit: (values) => {
+            if (values !== null) {
+                console.log("values is *not null before!", values);
+                values.email = "test@gmail"
+                console.log("values is *not null after!", values);
+                BusinessService().whatsapp_number(values).then((res) => {
+                    console.log("res is ", res);
+                    if(res.status === 200){
+                        toast("will contact you soon😍")
+                    }
+                }).catch((err) => {
+                    console.log("err is ", err);
+                    toast("number is already exists🤭")
+
+                })
+            }
+        }
+    })
+
+
     return (
         <div className="text-white footer">
-            {/* <MDBFooter className='bg-light text-center text-white'>
-                <MDBContainer className='p-4 pb-0'>
-                    <section className='mb-4'>
-                        <MDBBtn
-                            floating
-                            className='m-1'
-                            style={{ backgroundColor: '#3b5998' }}
-                            href='#!'
-                            role='button'
-                        >
-                            <MDBIcon
-                                fas
-                                icon="sort-amount-down-alt"
-                                className="ms-2"
-                                style={{ color: "#23af89" }}
-                            />
-                        </MDBBtn>
-
-                        <MDBBtn
-                            floating
-                            className='m-1'
-                            style={{ backgroundColor: '#55acee' }}
-                            href='#!'
-                            role='button'
-                        >
-                            <MDBIcon fab icon='twitter' />
-                        </MDBBtn>
-
-                        <MDBBtn
-                            floating
-                            className='m-1'
-                            style={{ backgroundColor: '#dd4b39' }}
-                            href='#!'
-                            role='button'
-                        >
-                            <MDBIcon fab icon='google' />
-                        </MDBBtn>
-                        <MDBBtn
-                            floating
-                            className='m-1'
-                            style={{ backgroundColor: '#ac2bac' }}
-                            href='#!'
-                            role='button'
-                        >
-                            <MDBIcon fab icon='instagram' />
-                        </MDBBtn>
-
-                        <MDBBtn
-                            floating
-                            className='m-1'
-                            style={{ backgroundColor: '#0082ca' }}
-                            href='#!'
-                            role='button'
-                        >
-                            <MDBIcon fab icon='linkedin-in' />
-                        </MDBBtn>
-
-                        <MDBBtn
-                            floating
-                            className='m-1'
-                            style={{ backgroundColor: '#333333' }}
-                            href='#!'
-                            role='button'
-                        >
-                            <MDBIcon fab icon='github' />
-                        </MDBBtn>
-                    </section>
-                </MDBContainer>
-
-                <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 1)' }}>
-                    © 2020 Copyright:
-                    <a className='text-white' href='https://paisahipaisahoga.in/'>
-                        paisahipaisahoga.in
-                    </a>
-                </div>
-            </MDBFooter> */}
             <div className="footer_title fadingBackground">
                 <div className="title_text">
                     <h5>Don't miss a beat in the financial world! Share your WhatsApp number for instant updates.</h5>
                 </div>
-                <div className="title_form d-flex align-items-center">
-                    <input type="text" name="number" placeholder="Your Whatapp number" />
-                    <input type="button" className="bg-success" value="SUBMIT" />
-                </div>
+                <form onSubmit={handleSubmit}>
+                    <div className="title_form d-flex align-items-center">
+                        <input type="text" name="mobile_number" placeholder="Your Whatapp number" onBlur={handleBlur} value={values.mobile_number} onChange={handleChange} />
+                        {errors.mobile_number && touched.mobile_number ? (<span className="text-danger">{errors.mobile_number}</span>) : null}
+                        <input type="submit" className="bg-success" />
+                    </div>
+                </form>
             </div>
             <div className="category_wrapper">
                 <div className="text-center">
@@ -135,6 +89,7 @@ function Footer() {
                     paisahipaisahoga.in
                 </a>
             </div>
+            <ToastContainer />
         </div>)
 }
 
