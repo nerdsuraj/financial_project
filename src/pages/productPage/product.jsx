@@ -88,7 +88,7 @@ const Productpage = () => {
                                             return (
                                             <Productcard {...eachCard} key={index} />)
                                         })
-                                    
+                        
                                 }
                             </div>
                         </>
