@@ -2,7 +2,7 @@
 import React from "react";
 import "./aboutus.css"
 import Navbar from "../Navbar/navbar";
-import Footer from "../Footer/Footer";
+import Footer from "../Footer/footer";
 import ProfileCards from "../ProfileCards";
 import Nikhil from "../../assets/images/nikhil.jpg"
 import Sooraj from "../../assets/images/sooraj.jpeg"

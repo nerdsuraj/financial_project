@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 
 import React from "react";
-import Footer from "../Footer/Footer";
+import Footer from "../Footer/footer";
 import Navbar from "../Navbar/navbar";
 import "./product.css";
 import { useState, useEffect } from "react";
@@ -10,7 +11,7 @@ import Productcard from "../Productcard";
 
 
 const Productpage = () => {
-    const [selectedCategory, setSelectedCategory] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState('');
     const [categorylist, setCategorylist] = useState([]);
     const [cardList, setCardList] = useState([]);
     const [mastercardList, setMasterCardList] = useState([]);
@@ -18,7 +19,6 @@ const Productpage = () => {
 
     useEffect(() => {
         get_product_data();
-        console.log(selectedCategory, "selectedCategory");
     }, []);
 
 
@@ -33,7 +33,6 @@ const Productpage = () => {
             console.log('response from the product list', response);
             if (response.status === 200) {
                 console.log('response.data', response?.data);
-                //filter out the category from the response.data.category and store in the variable
                 setCategorylist(response?.data?.category);
                 setCardList(response?.data?.results);
                 setMasterCardList(response?.data?.results);
@@ -47,12 +46,19 @@ const Productpage = () => {
 
 
     const handleCategoryChange = (event) => {
-        // console.log("selected category", selectedCategory);
+        console.log("event.target.value", event.target.value);
         setSelectedCategory(event.target.value);
-        const filteredProducts = mastercardList.filter((item) =>
-            item?.category === event.target.value
-        )
-        setCardList(filteredProducts);
+        console.log("selectedCategory", selectedCategory);
+        // if (selectedCategory === 'all') {
+        //     setCardList(mastercardList);
+        //     console.log("mastercardList inside the if condition", mastercardList);
+        // } else {
+        //     const filteredProducts = mastercardList.filter(
+        //         (item) => item?.category === selectedCategory
+        //     );
+        //     setCardList(filteredProducts);
+        //     console.log("mastercardList inside the else condition", mastercardList);
+        // }
     };
 
 
@@ -72,34 +78,32 @@ const Productpage = () => {
             </div>
             <div className="product_wrapper">
                 {
-                    categorylist.map((category, index) =>
-                        // console.log(cardList.filter((card)=>card.category===category))
-                        <>
-                            {(selectedCategory === category || selectedCategory === "") &&
+                    categorylist.map((category, index) => {
+                        const filteredCards = cardList.filter((card) => card.category === category);
+                        if (selectedCategory === "" || selectedCategory === category) {
+                            return (
                                 <>
-                                    <h3 className="mb-0" style={{ paddingLeft: "12.5px" }} key={index}>{category}</h3>
+                                    <h3 className="mb-0" style={{ paddingLeft: "12.5px" }} key={index}>
+                                        {category}
+                                    </h3>
                                     <hr></hr>
-                                </>}
-
-                            <div className="container-fluid product-container mb-5">
-                                {
-                                    
-                                        cardList.filter((card) => card.category === category).map((eachCard, index) => {
-                                            return (
-                                            <Productcard {...eachCard} key={index} />)
-                                        })
-                        
-                                }
-                            </div>
-                        </>
-                    )
+                                    <div className="container-fluid product-container mb-5">
+                                        {filteredCards.map((eachCard, cardIndex) => (
+                                            <Productcard {...eachCard} key={cardIndex} />
+                                        ))}
+                                    </div>
+                                </>
+                            );
+                        }
+                        return null;
+                    })
                 }
             </div>
-            <div className="container-lg card-container mb-5">
-                {/* {cardList.map((card,index)=>(
+            {/* <div className="container-lg card-container mb-5">
+                {cardList.map((card,index)=>(
                     <Productcard {...card} key={index}/>
-                ))}     */}
-            </div>
+                ))}    
+            </div> */}
             <Footer />
         </>
     );
