@@ -48,9 +48,9 @@ const Footer = () => {
                 <form onSubmit={handleSubmit}>
                     <div className="title_form d-flex align-items-center">
                         <input type="text" name="mobile_number" placeholder="Your Whatapp number" onBlur={handleBlur} value={values.mobile_number} onChange={handleChange} />
-                        {errors.mobile_number && touched.mobile_number ? (<span className="text-danger">{errors.mobile_number}</span>) : null}
                         <input type="submit" className="bg-success" />
                     </div>
+                    {errors.mobile_number && touched.mobile_number ? (<div className="text-danger">{errors.mobile_number}</div>) : null}
                 </form>
             </div>
             <div className="category_wrapper">
