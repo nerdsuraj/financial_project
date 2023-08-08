@@ -52,16 +52,16 @@ const Navbar = () => {
 
                     <ul className="navbar-nav px-4">
                         <li className="nav-item">
-                            <Link className="nav-link text-white" to="/">Home </Link>
+                            <Link className="nav-link text-white custom_link" to="/">Home </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-white" to="/product">Our Products </Link>
+                            <Link className="nav-link text-white custom_link" to="/product">Our Products </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-white" to="/aboutUs">About us</Link>
+                            <Link className="nav-link text-white custom_link" to="/aboutUs">About us</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-white" to="/contactUs">Connect with us</Link>
+                            <Link className="nav-link text-white custom_link" to="/contactUs">Connect with us</Link>
                         </li>
                         <li className="nav-item" style={{ position: 'relative' }}>
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
