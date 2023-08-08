@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-vars */
 //import first image as logo from images folder inside assets
@@ -6,14 +7,30 @@ import search from '../../assets/images/54481.png';
 import './navbar.css';
 import user from '../../assets/images/user.png';
 import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
+
 
 
 
 const Navbar = () => {
 
+    const [isLogin, setLogin] = useState();
+    let navigate = useNavigate();
+
+
+
+    useEffect(() => {
+        setLogin(localStorage.getItem('login'));
+        console.log('this is login crend', isLogin);
+    }, []);
+
     function logout() {
         localStorage.clear();
         window.location.reload();
+    }
+    function login(){
+        navigate('/Login')
     }
 
     return (
@@ -43,20 +60,23 @@ const Navbar = () => {
                         <li className="nav-item">
                             <Link className="nav-link text-white" to="/aboutUs">About us</Link>
                         </li>
-                        {/* <li className="nav-item">
-                            <Link className="nav-link text-white" to="/aboutUs">Resources</Link>
-                        </li> */}
                         <li className="nav-item">
-                            <Link className="nav-link text-white" to="/aboutUs">Connect with us</Link>
+                            <Link className="nav-link text-white" to="/contactUs">Connect with us</Link>
                         </li>
                         <li className="nav-item" style={{ position: 'relative' }}>
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                                 <img src={user} alt="user" style={{ width: '25px' }} />
                             </a>
                             <ul className="dropdown-menu custom_menu">
-                                <li><a className="dropdown-item" href="#">Edit Profile</a></li>
-                                <li><a className="dropdown-item" href="#">Upgrade</a></li>
-                                <li onClick={logout} ><a className="dropdown-item" href="#">Log Out</a></li>
+                                {isLogin ? (
+                                    <>
+                                        <li><a className="dropdown-item" href="#">Edit Profile</a></li>
+                                        <li><a className="dropdown-item" href="#">Upgrade</a></li>
+                                        <li onClick={logout}><a className="dropdown-item" href="#">Log Out</a></li>
+                                    </>
+                                ) : (
+                                    <li onClick={login}><a className="dropdown-item" href="#">Log In</a></li>
+                                )}
                             </ul>
                         </li>
                     </ul>

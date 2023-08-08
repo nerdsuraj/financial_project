@@ -5,6 +5,7 @@ import Navbar from "../pages/Navbar/navbar";
 import Homepage from "../pages/homepage/Homepage";
 import AboutUs from "../pages/AboutUs/aboutus";
 import Productpage from "../pages/productPage/product";
+import ContactUs from "../pages/ContactUs/contactus";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function reactRouter() {
@@ -17,6 +18,7 @@ function reactRouter() {
                     <Route path="/Login" element={<Login />} />
                     <Route path="/aboutUs" element={<AboutUs />} />
                     <Route path="/product" element={<Productpage />} />
+                    <Route path="/contactUs" element={<ContactUs />} />
                 </Routes>
             </Router>
         </div>
