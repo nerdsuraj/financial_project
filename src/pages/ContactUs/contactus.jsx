@@ -12,6 +12,7 @@ import { useFormik } from "formik";
 import map from '../../assets/images/map.png';
 import gmail from '../../assets/images/gmail.png';
 import call from '../../assets/images/call.png';
+import { BusinessService } from '../../services/businessServices';
 
 const ContactUs = () => {
 
@@ -29,6 +30,15 @@ const ContactUs = () => {
             console.log("values from sign up!!", values);
             if (values !== null) {
                 console.log('here is the data !!!');
+                BusinessService().contact_data(values).then((res) => {
+                    console.log("res is ", res);
+                    if(res.status === 200){
+                        toast("will contact you soon😍")
+                    }
+                }).catch((err) => {
+                    console.log("err is ", err);
+
+                })
             }
         },
     });

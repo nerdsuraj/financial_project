@@ -24,5 +24,10 @@ export function BusinessService() {
         return axios.post("http://206.189.130.235:5050/store_mobile_number",obj);
     }
 
-    return { getDataByPost, saveFileToS3 , getMarqueeData ,get_amazon_products,whatsapp_number }
+    const contact_data = (obj) => {
+        console.log("object to contact data!!!", obj);
+        return axios.post("http://206.189.130.235:5050/contact_us",obj);
+    }
+
+    return { getDataByPost, saveFileToS3 , getMarqueeData ,get_amazon_products,whatsapp_number,contact_data }
 }
