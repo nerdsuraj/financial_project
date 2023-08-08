@@ -40,7 +40,7 @@ const Homepage = () => {
     return (
         <>
             <Navbar />
-            <div className="marquee-container">
+            {/* <div className="marquee-container"> */}
                 <marquee className="marquee-content">
                     <span className="market-label">Today's Market:&nbsp;&nbsp;&nbsp; </span>
                     {margueeData.map((item, index) => (
@@ -50,7 +50,7 @@ const Homepage = () => {
                         </span>
                     ))}
                 </marquee>
-            </div>
+            {/* </div> */}
             <Carousel />
             <Defaultcards />
             {/* <Courses />

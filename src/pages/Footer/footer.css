@@ -18,8 +18,8 @@
 } */
 
 .title_form input:nth-child(1){
-    width:100%;
-    max-width:350px;
+    width:300px;
+    max-width:70vw;
     padding:5px 15px;
     border-radius: 16px 0px 0px 16px;
     border:0px;

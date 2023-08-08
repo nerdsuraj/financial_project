@@ -46,30 +46,31 @@ const ContactUs = () => {
 
     return (<>
         <Navbar />
-        <div className='mainContainer'>
+        <div className='mainContainer container-fluid'>
             <div>
-                <h2 style={{ color: '#1246AB', fontWeight: 'bold', fontFamily: 'sans-serif' }}>Contact Us</h2>
+                <h2 style={{ color: '#1246AB', fontWeight: 'bold', fontFamily: 'sans-serif', paddingLeft:"10px" }}>Contact Us</h2>
             </div>
-            <div className='fillInput'>
-                <div className="col-lg-8">
+            <div className="row">
+            <div className='fillInput col-md-6 px-4'>
+                <div>
                     <form onSubmit={handleSubmit}>
-                        <div className="row">
+                        <div>
                             <div className="form-outline mb-4">
                                 <div className="form-outline">
-                                    <label className="form-label" htmlFor="form3Example1">Full Name</label>
-                                    <input type="text" id="form3Example1" className="form-control" name="name" onBlur={handleBlur} value={values.name} onChange={handleChange} />
+                                    <label className="form-label" htmlFor="form3Example1">Full Name</label><br/>
+                                    <input type="text" id="form3Example1" className="custom_input" name="name" onBlur={handleBlur} value={values.name} onChange={handleChange} /><br/>
                                     {errors.name && touched.name ? (<span className="text-danger">{errors.name}</span>) : null}
                                 </div>
                             </div>
                         </div>
                         <div className="form-outline mb-4">
-                            <label className="form-label" htmlFor="form3Example2">Email address</label>
-                            <input type="email" id="form3Example2" className="form-control" name="email" onBlur={handleBlur} value={values.email} onChange={handleChange} />
+                            <label className="form-label" htmlFor="form3Example2">Email address</label><br/>
+                            <input type="email" id="form3Example2" className="custom_input" name="email" onBlur={handleBlur} value={values.email} onChange={handleChange} /><br/>
                             {errors.email && touched.email ? (<span className="text-danger">{errors.email}</span>) : null}
                         </div>
                         <div className="form-outline mb-4">
-                            <label className="form-label" htmlFor="form3Example3">Your message </label>
-                            <textarea type="text" id="form3Example3" className="form-control" name="message" onBlur={handleBlur} value={values.message} onChange={handleChange} />
+                            <label className="form-label" htmlFor="form3Example3">Your message </label><br/>
+                            <textarea type="text" id="form3Example3" className="custom_input" name="message" onBlur={handleBlur} value={values.message} onChange={handleChange} /><br/>
                             {errors.message && touched.message ? (<span className="text-danger">{errors.message}</span>) : null}
                         </div>
 
@@ -79,7 +80,7 @@ const ContactUs = () => {
                     </form>
                 </div>
             </div>
-            <div className='quertDetails'>
+            <div className='quertDetails col-md-6'>
                 <div>
                     <h2 style={{ color: '#3469fa', fontWeight: 'bold', }}>Connect With Us</h2>
                     <span style={{ fontWeight: 'bold' }}>
@@ -88,18 +89,19 @@ const ContactUs = () => {
                 </div>
                 <div className='imagesection'>
                     <div>
-                        <img src={call} alt="phone" style={{ height: '90px' }} />
-                        <span>6200749278</span> <span>9029321998</span>
+                        <img src={call} alt="phone" style={{ width:"100%", maxWidth: '50px' }} />
+                        <span className="px-3">6200749278, 9029321998</span>
                     </div>
                     <div>
-                        <img src={gmail} alt="email" style={{ height: '90px' }}/>
-                        <span>freelancers@fastservice.com</span>
+                        <img src={gmail} alt="email" style={{ width:"100%", maxWidth: '50px' }}/>
+                        <span className="px-3">freelancers@fastservice.com</span>
                     </div>
                     <div>
-                        <img src={map} alt="address" style={{ height: '90px' }}/>
-                        <span>Mumbai Maharashtra, India 🇮🇳</span>
+                        <img src={map} alt="address" style={{ width:"100%", maxWidth: '50px' }}/>
+                        <span className="px-3">Mumbai, Maharashtra, India 🇮🇳</span>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
 

@@ -34,7 +34,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="navbar navbar-expand-sm custom_nav navbar-dark sticky-top">
+        <nav className="navbar navbar-expand-sm custom_nav navbar-dark sticky-top p-0">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#" style={{ marginLeft: '4%' }}>
                     <img src={logo} alt="Avatar Logo" style={{ width: '40px' }} className="rounded-pill" />

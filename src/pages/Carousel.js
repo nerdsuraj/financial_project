@@ -6,7 +6,7 @@ import img3 from "../assets/images/pexels-tima-miroshnichenko-7567443.jpg";
 
 const Carousel = () => {
   return (
-    <div id="demo" className="carousel slide" data-bs-ride="carousel">
+    <div id="demo" className="carousel slide" data-bs-ride="carousel" style={{top:"-7px"}}>
 
   {/* Indicators/dots  */}
   <div className="carousel-indicators">
