@@ -8,7 +8,7 @@ import "./product.css";
 import { useState, useEffect } from "react";
 import { BusinessService } from "../../services/businessServices";
 import Productcard from "../Productcard";
-
+import loader from "../../assets/images/loading-52-unscreen.gif"
 
 const Productpage = () => {
     const [selectedCategory, setSelectedCategory] = useState('');
@@ -79,25 +79,28 @@ const Productpage = () => {
             </div>
             <div className="product_wrapper">
                 {
-                    categorylist.map((category, index) => {
-                        const filteredCards = cardList.filter((card) => card.category === category);
-                        if (selectedCategory === "" || selectedCategory === category) {
-                            return (
-                                <>
-                                    <h3 className="mb-0" style={{ paddingLeft: "12.5px" }} key={index}>
-                                        {category}
-                                    </h3>
-                                    <hr></hr>
-                                    <div className="container-fluid product-container mb-5">
-                                        {filteredCards.map((eachCard, cardIndex) => (
-                                            <Productcard {...eachCard} key={cardIndex} />
-                                        ))}
-                                    </div>
-                                </>
-                            );
-                        }
-                        return null;
-                    })
+                    categorylist.length !== 0 ?
+                        categorylist.map((category, index) => {
+                            const filteredCards = cardList.filter((card) => card.category === category);
+                            if (selectedCategory === "" || selectedCategory === category) {
+                                return (
+                                    <>
+                                        <h3 className="mb-0" style={{ paddingLeft: "12.5px" }} key={index}>
+                                            {category}
+                                        </h3>
+                                        <hr></hr>
+                                        <div className="container-fluid product-container mb-5">
+                                            {filteredCards.map((eachCard, cardIndex) => (
+                                                <Productcard {...eachCard} key={cardIndex} />
+                                            ))}
+                                        </div>
+                                    </>
+                                );
+                            }
+                            return null;
+                        }) : <div className="d-flex justify-content-center mb-4">
+                                <img src={loader} alt="loader" />
+                        </div>
                 }
             </div>
             {/* <div className="container-lg card-container mb-5">
