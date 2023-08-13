@@ -88,7 +88,7 @@ const Signup = () => {
                                         <span className="underline-on-hover" onClick={handleLogin} style={{"color": "#007bff",}} >already have an account <i className="fa fa-sign-in" aria-hidden="true"></i></span>
                                     </label>
                                 </div>
-                                <div className="text-center">
+                                {/* <div className="text-center">
                                     <p>or sign up with:</p>
                                     <button type="button" className="btn btn-link btn-floating mx-1">
                                         <i className="fa fa-facebook-f"></i>
@@ -105,7 +105,7 @@ const Signup = () => {
                                     <button type="button" className="btn btn-link btn-floating mx-1">
                                         <i className="fa fa-github"></i>
                                     </button>
-                                </div>
+                                </div> */}
                             </form>
                         </div>
                     </div>

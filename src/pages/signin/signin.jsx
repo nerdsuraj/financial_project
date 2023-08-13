@@ -88,7 +88,7 @@ const Signin = () => {
                                 <button type="submit" className="btn btn-primary btn-block mb-4">
                                     Sign in
                                 </button>
-                                <div className="text-center">
+                                {/* <div className="text-center">
                                     <p>or sign in with:</p>
                                     <button type="button" className="btn btn-link btn-floating mx-1">
                                         <i className="fa fa-facebook-f"></i>
@@ -105,7 +105,7 @@ const Signin = () => {
                                     <button type="button" className="btn btn-link btn-floating mx-1">
                                         <i className="fa fa-github"></i>
                                     </button>
-                                </div>
+                                </div> */}
                             </form>
                         </div>
                     </div>
