@@ -20,8 +20,8 @@ const Signin = () => {
     // }, []);
 
     const FormInitialValues = {
-        email: 'soorajkrpandit@gmail.com',
-        password: 'Suraj@12345'
+        email: '',
+        password: ''
     }
 
     const { handleSubmit, values, errors, touched, handleBlur, handleChange } = useFormik({

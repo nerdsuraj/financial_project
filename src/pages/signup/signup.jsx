@@ -13,10 +13,10 @@ const Signup = () => {
     const navigate = useNavigate();
 
     const FormInitialValues = {
-        name: 'suraj',
-        phone: '1234567890',
-        email: 'soorajkrpandit@gmail.com',
-        password: 'dinesh@12345',
+        name: '',
+        phone: '',
+        email: '',
+        password: '',
     };
 
     const { handleSubmit, values, errors, touched, handleBlur, handleChange } = useFormik({
