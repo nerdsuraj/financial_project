@@ -18,20 +18,20 @@ const ContactUs = () => {
 
 
     const FormInitialValues = {
-        name: 'suraj',
-        email: 'soorajkrpandit@gmail.com',
-        message: 'helloji',
+        name: '',
+        email: '',
+        message: '',
     };
 
     const { handleSubmit, values, errors, touched, handleBlur, handleChange } = useFormik({
         initialValues: FormInitialValues,
         validationSchema: contactShchema,
         onSubmit: async (values) => {
-            console.log("values from sign up!!", values);
+            // console.log("values from sign up!!", values);
             if (values !== null) {
-                console.log('here is the data !!!');
+                // console.log('here is the data !!!');
                 BusinessService().contact_data(values).then((res) => {
-                    console.log("res is ", res);
+                    // console.log("res is ", res);
                     if(res.status === 200){
                         toast("will contact you soon😍")
                     }

@@ -23,10 +23,10 @@ const Signup = () => {
         initialValues: FormInitialValues,
         validationSchema: signupSchema,
         onSubmit: async (values) => {
-            console.log("values from sign up!!", values);
+            // console.log("values from sign up!!", values);
             if (values !== null) {
                 UserSignUp(values).then((res) => {
-                    console.log("from registration api", res);
+                    // console.log("from registration api", res);
                     if (res.status === 200) {
                         toast("Registration Successfull!!")
                         setTimeout(() => {

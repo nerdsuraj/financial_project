@@ -21,11 +21,11 @@ const Footer = () => {
         validationSchema: NumberSchema,
         onSubmit: (values) => {
             if (values !== null) {
-                console.log("values is *not null before!", values);
+                // console.log("values is *not null before!", values);
                 values.email = "test@gmail"
-                console.log("values is *not null after!", values);
+                // console.log("values is *not null after!", values);
                 BusinessService().whatsapp_number(values).then((res) => {
-                    console.log("res is ", res);
+                    // console.log("res is ", res);
                     if(res.status === 200){
                         toast("will contact you soon😍")
                     }
@@ -50,7 +50,7 @@ const Footer = () => {
         <input
             type="text"
             name="mobile_number"
-            placeholder="Your WhatsApp number"
+            placeholder="Get Instant Updates on WhatsApp"
             onBlur={handleBlur}
             value={values.mobile_number}
             onChange={(e) => {

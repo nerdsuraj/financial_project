@@ -28,10 +28,10 @@ const Signin = () => {
         initialValues: FormInitialValues,
         validationSchema: signinSchema,
         onSubmit: (values) => {
-            console.log("values from sign in!!", values);
+            // console.log("values from sign in!!", values);
             if (values !== null) {
                 UserSignIn(values).then((res) => {
-                    console.log("from login api", res);
+                    // console.log("from login api", res);
                     if (res.status === 200) {
                         toast("Login Successfull!!")
                         let store_local = res.config.data;

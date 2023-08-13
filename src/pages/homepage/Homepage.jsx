@@ -23,9 +23,9 @@ const Homepage = () => {
     const get_marguee_data = async () => {
         try {
             const response = await BusinessService().getMarqueeData();
-            console.log('response from the marguee list', response);
+            // console.log('response from the marguee list', response);
             if (response.status === 200) {
-                console.log('response.data', response.data);
+                // console.log('response.data', response.data);
                 setMargueeData(response.data);
 
             }
@@ -34,7 +34,7 @@ const Homepage = () => {
         }
 
     }
-    console.log('margueeData', margueeData);
+    // console.log('margueeData', margueeData);
 
 
     return (

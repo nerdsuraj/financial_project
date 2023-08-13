@@ -22,7 +22,7 @@ const Navbar = () => {
 
     useEffect(() => {
         setLogin(localStorage.getItem('login'));
-        console.log('this is login crend', isLogin);
+        // console.log('this is login crend', isLogin);
     }, []);
 
     function logout() {

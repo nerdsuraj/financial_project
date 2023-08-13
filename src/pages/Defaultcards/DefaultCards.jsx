@@ -39,9 +39,9 @@ const Defaultcards = () => {
             }
         }
         try {
-            console.log('obj', obj);
+            // console.log('obj', obj);
             const response = await BusinessService().getDataByPost(obj);
-            console.log('response', response);
+            // console.log('response', response);
             if (response.status === 200) {
                 setCards(response.data.results);
             }
@@ -49,7 +49,7 @@ const Defaultcards = () => {
             console.error('Error fetching news:', error);
         }
     }
-    console.log('newsData:', cards.results);
+    // console.log('newsData:', cards.results);
 
     return (
         <div className="container-lg py-2">

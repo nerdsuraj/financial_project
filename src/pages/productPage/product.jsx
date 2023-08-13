@@ -15,6 +15,7 @@ const Productpage = () => {
     const [categorylist, setCategorylist] = useState([]);
     const [cardList, setCardList] = useState([]);
     const [mastercardList, setMasterCardList] = useState([]);
+    const [islistFetch, setIsListFetch] = useState(false)
 
 
     useEffect(() => {
@@ -28,11 +29,11 @@ const Productpage = () => {
             let postData = {
                 email: "suraj"
             }
-            console.log("🚀 ~ file: product.jsx:24 ~ constget_product_data= ~ postData:", postData)
+            // console.log("🚀 ~ file: product.jsx:24 ~ constget_product_data= ~ postData:", postData)
             const response = await BusinessService().get_amazon_products(postData);
-            console.log('response from the product list', response);
+            // console.log('response from the product list', response);
             if (response.status === 200) {
-                console.log('response.data', response?.data);
+                // console.log('response.data', response?.data);
                 setCategorylist(response?.data?.category);
                 setCardList(response?.data?.results);
                 setMasterCardList(response?.data?.results);
@@ -41,14 +42,14 @@ const Productpage = () => {
             console.error('Error fetching news:', error);
         }
     }
-    console.log('categorylist', categorylist);
-    console.log('cardList', cardList);
+    // console.log('categorylist', categorylist);
+    // console.log('cardList', cardList);
 
 
     const handleCategoryChange = (event) => {
-        console.log("event.target.value", event.target.value);
+        // console.log("event.target.value", event.target.value);
         setSelectedCategory(event.target.value);
-        console.log("selectedCategory", selectedCategory);
+        // console.log("selectedCategory", selectedCategory);
         // if (selectedCategory === 'all') {
         //     setCardList(mastercardList);
         //     console.log("mastercardList inside the if condition", mastercardList);
