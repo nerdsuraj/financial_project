@@ -28,12 +28,13 @@
     left: -100px !important;
 }
 .custom_nav{
-    background: linear-gradient(to right, #56ccf2, #2f80ed);
+    background: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .custom_link{
   margin-left:20px;
+  color:black!important;
 }
 .custom_link:hover{
     text-decoration-line:underline!important;

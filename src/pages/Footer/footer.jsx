@@ -46,14 +46,28 @@ const Footer = () => {
                     <h5>Don't miss a beat in the financial world! Share your WhatsApp number for instant updates.</h5>
                 </div>
                 <form onSubmit={handleSubmit}>
-                    <div className="title_form d-flex align-items-center">
-                        <input type="text" name="mobile_number" placeholder="Your Whatapp number" onBlur={handleBlur} value={values.mobile_number} onChange={handleChange} />
-                        <input type="submit" className="bg-success" />
-                    </div>
-                    {errors.mobile_number && touched.mobile_number ? (<div className="text-danger">{errors.mobile_number}</div>) : null}
-                </form>
+    <div className="title_form d-flex align-items-center">
+        <input
+            type="text"
+            name="mobile_number"
+            placeholder="Your WhatsApp number"
+            onBlur={handleBlur}
+            value={values.mobile_number}
+            onChange={(e) => {
+                const numericValue = e.target.value.replace(/\D/g, ''); // Remove non-numeric characters
+                const maxLength = 10;
+                const truncatedValue = numericValue.slice(0, maxLength); // Limit to 10 characters
+                handleChange({ target: { name: 'mobile_number', value: truncatedValue } });
+            }}
+        />
+        <input type="submit" className="bg-success" value="Subscribe" />
+    </div>
+    {errors.mobile_number && touched.mobile_number ? (
+        <div className="text-danger">{errors.mobile_number}</div>
+    ) : null}
+</form>
             </div>
-            <div className="category_wrapper">
+            {/* <div className="category_wrapper">
                 <div className="text-center">
                     <h5>OUR WORK</h5>
                     <h6>Who we Serve</h6>
@@ -82,7 +96,7 @@ const Footer = () => {
                     <i className="fa-brands fa-linkedin mx-1"></i>
                     <i className="fa-brands fa-google mx-1"></i>
                 </div>
-            </div>
+            </div> */}
             <div className='text-center p-3 fadingBackground'>
                 © 2020 Copyright:
                 <a className="text-white" href='https://paisahipaisahoga.in/'>

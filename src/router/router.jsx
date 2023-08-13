@@ -13,11 +13,11 @@ function reactRouter() {
             <div>
             <Router>
                 <Routes>
-                    <Route path="/" element={<Homepage/>} />
+                    <Route path="/" element={<Productpage/>} />
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/Login" element={<Login />} />
                     <Route path="/aboutUs" element={<AboutUs />} />
-                    <Route path="/product" element={<Productpage />} />
+                    <Route path="/news" element={<Homepage />} />
                     <Route path="/contactUs" element={<ContactUs />} />
                 </Routes>
             </Router>

@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-vars */
 //import first image as logo from images folder inside assets
-import logo from '../../assets/images/computer-icons-chart-analytics-financial-web-analytics-icon.jpg';
+import logo from '../../assets/images/paisa-hi-paisa-hoga-without-border-black-removebg-preview.png';
 import search from '../../assets/images/54481.png';
 import './navbar.css';
 import user from '../../assets/images/user.png';
@@ -34,10 +34,10 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="navbar navbar-expand-sm custom_nav navbar-dark sticky-top p-0">
+        <nav className="navbar navbar-expand-sm custom_nav navbar-light sticky-top p-0">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#" style={{ marginLeft: '4%' }}>
-                    <img src={logo} alt="Avatar Logo" style={{ width: '40px' }} className="rounded-pill" />
+                <a className="navbar-brand p-0" href="#">
+                    <img src={logo} alt="Avatar Logo" style={{ width: '150px' }} className="rounded-pill" />
                 </a>
                 {/* <div className="searchContainer">
                     <input placeholder="Enter search text" className="custom_input" />
@@ -52,16 +52,16 @@ const Navbar = () => {
 
                     <ul className="navbar-nav px-4">
                         <li className="nav-item">
-                            <Link className="nav-link text-white custom_link" to="/">Home </Link>
+                            <Link className="nav-link custom_link" to="/">Home </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-white custom_link" to="/product">Our Products </Link>
+                            <Link className="nav-link custom_link" to="/news">News </Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-white custom_link" to="/aboutUs">About us</Link>
+                            <Link className="nav-link custom_link" to="/aboutUs">About us</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-white custom_link" to="/contactUs">Connect with us</Link>
+                            <Link className="nav-link custom_link" to="/contactUs">Connect with us</Link>
                         </li>
                         <li className="nav-item" style={{ position: 'relative' }}>
                             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
