@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { BusinessService } from "../../services/businessServices";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 const Footer = () => {
 
@@ -19,11 +20,13 @@ const Footer = () => {
     const { handleSubmit, values, errors, touched, handleBlur, handleChange } = useFormik({
         initialValues: FormInitialValues,
         validationSchema: NumberSchema,
-        onSubmit: (values) => {
+        onSubmit: async (values) => {
             if (values !== null) {
                 // console.log("values is *not null before!", values);
+                const response = await axios.get('https://api64.ipify.org?format=json');
+                values.userIP = response.data.ip;
                 values.email = "test@gmail"
-                // console.log("values is *not null after!", values);
+                console.log("values is *not null after!", values);
                 BusinessService().whatsapp_number(values).then((res) => {
                     // console.log("res is ", res);
                     if(res.status === 200){
@@ -54,9 +57,9 @@ const Footer = () => {
             onBlur={handleBlur}
             value={values.mobile_number}
             onChange={(e) => {
-                const numericValue = e.target.value.replace(/\D/g, ''); // Remove non-numeric characters
+                const numericValue = e.target.value.replace(/\D/g, '');
                 const maxLength = 10;
-                const truncatedValue = numericValue.slice(0, maxLength); // Limit to 10 characters
+                const truncatedValue = numericValue.slice(0, maxLength);
                 handleChange({ target: { name: 'mobile_number', value: truncatedValue } });
             }}
         />

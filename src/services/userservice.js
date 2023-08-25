@@ -3,14 +3,14 @@ import axios from "axios";
 
 export const UserSignIn = (Obj) => {
     try {
-        return axios.post("http://206.189.130.235:5050/login", Obj)
+        return axios.post("https://api.paisahipaisahoga.in//login", Obj)
     } catch (err) {
     }
 }
 
 export const UserSignUp = (Obj) => {
     try {
-        return axios.post("http://206.189.130.235:5050/signup", Obj);
+        return axios.post("https://api.paisahipaisahoga.in//signup", Obj);
     } catch (err) {
         console.log(err);
     }

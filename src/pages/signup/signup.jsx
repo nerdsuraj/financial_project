@@ -77,7 +77,7 @@ const Signup = () => {
                                 </div>
                                 <div className="form-outline mb-4">
                                     <label className="form-label" htmlFor="form3Example4">Password</label>
-                                    <input type="password" id="form3Example4" className="form-control" name="password" onBlur={handleBlur} value={values.password} onChange={handleChange} />
+                                    <input type="text" id="form3Example4" className="form-control" name="password" onBlur={handleBlur} value={values.password} onChange={handleChange} />
                                     {errors.password && touched.password ? (<span className="text-danger">{errors.password}</span>) : null}
                                 </div>
                                 <button type="submit" className="btn btn-primary btn-block mb-4">

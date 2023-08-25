@@ -13,6 +13,8 @@ import { useState, useEffect } from "react";
 
 const Signin = () => {
     let navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
+
 
 
     // useEffect(() => {
@@ -37,7 +39,7 @@ const Signin = () => {
                         let store_local = res.config.data;
                         store_local = JSON.parse(store_local);
                         localStorage.setItem('email', store_local.email);
-                        localStorage.setItem('login',true);
+                        localStorage.setItem('login', true);
                         setTimeout(() => {
                             navigate('/');
                         }, 1000);
@@ -69,9 +71,24 @@ const Signin = () => {
                                     <input type="email" id="form3Example3" className="form-control" name="email" onBlur={handleBlur} value={values.email} onChange={handleChange} />
                                     {errors.email && touched.email ? (<span className="text-danger">{errors.email}</span>) : null}
                                 </div>
+                                <div>
+                                    {showPassword ? (
+                                        <i
+                                            className="bi bi-eye"
+                                            onClick={() => setShowPassword(false)}
+                                            style={{ cursor: "pointer" }}
+                                        ></i>
+                                    ) : (
+                                        <i
+                                            className="bi bi-eye-slash"
+                                            onClick={() => setShowPassword(true)}
+                                            style={{ cursor: "pointer" }}
+                                        ></i>
+                                    )}
+                                </div>
                                 <div className="form-outline mb-4">
                                     <label className="form-label" htmlFor="form3Example4">Password</label>
-                                    <input type="password" id="form3Example4" className="form-control" name="password" onBlur={handleBlur} value={values.password} onChange={handleChange} />
+                                    <input type={showPassword ? "text" : "password"} id="form3Example4" className="form-control" name="password" onBlur={handleBlur} value={values.password} onChange={handleChange} />
                                     {errors.password && touched.password ? (<span className="text-danger">{errors.password}</span>) : null}
                                 </div>
                                 <div style={{ "marginRight": "72%", "cursor": "pointer" }}>
