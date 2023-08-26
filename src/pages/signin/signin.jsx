@@ -17,10 +17,6 @@ const Signin = () => {
 
 
 
-    // useEffect(() => {
-    //     localStorage.clear();
-    // }, []);
-
     const FormInitialValues = {
         email: '',
         password: ''
@@ -71,24 +67,26 @@ const Signin = () => {
                                     <input type="email" id="form3Example3" className="form-control" name="email" onBlur={handleBlur} value={values.email} onChange={handleChange} />
                                     {errors.email && touched.email ? (<span className="text-danger">{errors.email}</span>) : null}
                                 </div>
-                                <div>
-                                    {showPassword ? (
-                                        <i
-                                            className="bi bi-eye"
-                                            onClick={() => setShowPassword(false)}
-                                            style={{ cursor: "pointer" }}
-                                        ></i>
-                                    ) : (
-                                        <i
-                                            className="bi bi-eye-slash"
-                                            onClick={() => setShowPassword(true)}
-                                            style={{ cursor: "pointer" }}
-                                        ></i>
-                                    )}
-                                </div>
                                 <div className="form-outline mb-4">
                                     <label className="form-label" htmlFor="form3Example4">Password</label>
-                                    <input type={showPassword ? "text" : "password"} id="form3Example4" className="form-control" name="password" onBlur={handleBlur} value={values.password} onChange={handleChange} />
+                                    <div style={{ justifyContent: 'space-between', alignItems: 'center' }}>
+                                        <input type={showPassword ? "text" : "password"} id="form3Example4" className="form-control" name="password" onBlur={handleBlur} value={values.password} onChange={handleChange} />
+                                        <div>
+                                            {showPassword ? (
+                                                <i
+                                                    className="bi bi-eye"
+                                                    onClick={() => setShowPassword(false)}
+                                                    style={{ cursor: "pointer" }}
+                                                ></i>
+                                            ) : (
+                                                <i
+                                                    className="bi bi-eye-slash"
+                                                    onClick={() => setShowPassword(true)}
+                                                    style={{ cursor: "pointer" }}
+                                                ></i>
+                                            )}
+                                        </div>
+                                    </div>
                                     {errors.password && touched.password ? (<span className="text-danger">{errors.password}</span>) : null}
                                 </div>
                                 <div style={{ "marginRight": "72%", "cursor": "pointer" }}>
