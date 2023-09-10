@@ -81,6 +81,13 @@
   gap:60px;
 }
 
+.card-container-wrapper{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
 .product-container{
     display: flex;
     justify-content: start;
@@ -153,6 +160,21 @@
   margin:auto;
 }
 
+
+.card-wrapper{
+  display:flex;
+  padding-bottom:10px;
+  border-bottom:1px solid lightgrey;
+}
+
+.img-container{
+  width:20%;
+}
+
+.description_box{
+  width:80%;
+}
+
 @media only screen and (max-width:992px){
   .custom_carousel{
     height:auto;
@@ -163,11 +185,23 @@
   .custom_carousel{
     height:auto;
   }
+
+  .description{
+    display:none;
+  }
   .cardWrapper{
     flex-direction:column;
   }
   .descriptionWrapper{
     width:100%;
+  }
+  .img-container{
+    display:flex;
+    align-items:center;
+  }
+  .newsImg{
+    height:100%;
+    object-fit:cover;
   }
 }
 

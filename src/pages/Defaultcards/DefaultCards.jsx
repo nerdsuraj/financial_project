@@ -41,7 +41,7 @@ const Defaultcards = () => {
         try {
             // console.log('obj', obj);
             const response = await BusinessService().getDataByPost(obj);
-            // console.log('response', response);
+            console.log('response', response);
             if (response.status === 200) {
                 setCards(response.data.results);
             }
@@ -54,7 +54,7 @@ const Defaultcards = () => {
     return (
         <div className="container-lg py-2">
             <h2 className="display-6">Check following curated news based on your interest</h2>
-            {cards.length!==0 ? <div className="card-container">
+            {cards.length!==0 ? <div className="card-container-wrapper">
                 {
                     currentCards.map((card, index) => {
                         return (
