@@ -1,27 +1,36 @@
 .searchContainer {
     position: relative;
+    left: 31%;
 }
 
 .custom_input {
     font-size: 0.9rem;
+    font-weight: bold;
     padding: 10px;
     min-width: 220px;
-    border-radius: 0px;
-    border: 0px;
+    border-radius: 15px; /* Add border-radius */
+    border: 1px solid blue; /* Set border color to blue */
+
 }
 
 .custom_input:focus {
-    border: 0px !important;
+    border: 1px solid blue !important;
     outline: 0px !important;
 }
 
 .search {
     position: absolute;
-    right: 5px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
+    /* background-color: white; */
+    padding: 3px;
+    border-radius: 50%;
+    border: 1px solid blue;
+    height: 25px;
 }
+
 
 .custom_menu {
     position: absolute !important;

@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import './App.css';
-// import ReactRouter from './router/router';
 import Signup from "../src/pages/signup/signup";
 import Login from "../src/pages/signin/signin";
 import Navbar from "../src/pages/Navbar/navbar";
@@ -17,11 +16,11 @@ function App() {
     {/* <ReactRouter/> */}
     <Router>
                 <Routes>
-                    <Route path="/" element={<Productpage/>} />
+                    <Route path="/product" element={<Productpage/>} />
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/Login" element={<Login />} />
                     <Route path="/aboutUs" element={<AboutUs />} />
-                    <Route path="/news" element={<Homepage />} />
+                    <Route path="/" element={<Homepage />} />
                     <Route path="/contactUs" element={<ContactUs />} />
                 </Routes>
             </Router>

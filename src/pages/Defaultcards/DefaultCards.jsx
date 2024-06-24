@@ -6,23 +6,22 @@ import { Link } from "react-router-dom"
 import "./defaultCards.css";
 import Shimmer from "../Shimmer";
 
-const Defaultcards = () => {
+const Defaultcards = ({ searchResults, isLoading }) => {
     const [cards, setCards] = useState([]);
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
-
-    const pageSize = 12; // Number of cards to show per page
+    // const [isLoading, setIsLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1); // Current page number
+    const pageSize = 12; // Number of cards to show per page
 
-    // Calculate the indexes for the current page
-    const startIndex = (currentPage - 1) * pageSize;
-    const endIndex = startIndex + pageSize;
-
-    // Get the cards for the current page
-    const currentCards = cards.slice(startIndex, endIndex);
 
     useEffect(() => {
-        get_news();
-    }, []);
+        if (searchResults && searchResults.length > 0) {
+            setCards(searchResults); // Set cards to search results
+        } else {
+            get_news();
+        }
+    }, [searchResults]);
+
 
     const get_news = async () => {
         let obj = {};
@@ -39,30 +38,45 @@ const Defaultcards = () => {
             }
         }
         try {
-            // console.log('obj', obj);
             const response = await BusinessService().getDataByPost(obj);
             console.log('response', response);
             if (response.status === 200) {
                 setCards(response.data.results);
             }
+            else {
+                setCards([]);
+            }
         } catch (error) {
             console.error('Error fetching news:', error);
+            setCards([]);
+
         }
+
     }
-    // console.log('newsData:', cards.results);
+
+    // Calculate the indexes for the current page
+    const startIndex = (currentPage - 1) * pageSize;
+    const endIndex = startIndex + pageSize;
+    const currentCards = cards.slice(startIndex, endIndex);
+
 
     return (
         <div className="container-lg py-2">
-            <h2 className="display-6">Check following curated news based on your interest</h2>
-            {cards.length!==0 ? <div className="card-container-wrapper">
-                {
-                    currentCards.map((card, index) => {
-                        return (
+            <h2 className="display-6" style={{ textDecoration: 'underline', textDecorationColor: '#4287f5' }}>Stay Ahead: Top Financial News Curated Just for You</h2>
+            <br />
+            {isLoading ? (
+                <Shimmer />
+            ) : (
+                cards.length !== 0 ? (
+                    <div className="card-container-wrapper">
+                        {currentCards.map((card, index) => (
                             <Newscard key={index} {...card} />
-                        )
-                    })
-                }
-            </div> : ""}
+                        ))}
+                    </div>
+                ) : (
+                    <div>No data found</div>
+                )
+            )}
             {isUserLoggedIn && (
                 <div className="pagination-container">
                     {currentPage > 1 && (

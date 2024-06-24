@@ -13,8 +13,9 @@ import Defaultcards from "../Defaultcards/DefaultCards";
 import Carousel from "../Carousel";
 
 const Homepage = () => {
-
     let [margueeData, setMargueeData] = useState([]);
+    const [searchResults, setSearchResults] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         get_marguee_data();
@@ -23,9 +24,7 @@ const Homepage = () => {
     const get_marguee_data = async () => {
         try {
             const response = await BusinessService().getMarqueeData();
-            // console.log('response from the marguee list', response);
             if (response.status === 200) {
-                // console.log('response.data', response.data);
                 setMargueeData(response.data);
 
             }
@@ -34,12 +33,11 @@ const Homepage = () => {
         }
 
     }
-    // console.log('margueeData', margueeData);
 
 
     return (
         <>
-            <Navbar />
+            <Navbar  onSearchResults={setSearchResults} setLoading={setIsLoading} />
             {/* <div className="marquee-container"> */}
                 <marquee className="marquee-content">
                     <span className="market-label">Today's Market:&nbsp;&nbsp;&nbsp; </span>
@@ -51,8 +49,7 @@ const Homepage = () => {
                     ))}
                 </marquee>
             {/* </div> */}
-            <Carousel />
-            <Defaultcards />
+            <Defaultcards searchResults={searchResults} isLoading={isLoading} />
             {/* <Courses />
             <Webinar /> */}
             <div className="container-lg py-2">
