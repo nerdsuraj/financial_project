@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6465f35c.css",
+    "main.js": "/static/js/main.ba62314a.js",
+    "static/js/787.cace681a.chunk.js": "/static/js/787.cace681a.chunk.js",
+    "static/media/pexels-essow-k-936722.jpg": "/static/media/pexels-essow-k-936722.4e9407edbecb95c72758.jpg",
+    "static/media/nikhil.jpg": "/static/media/nikhil.7795bc9d62c84c3847dd.jpg",
+    "static/media/pexels-helena-lopes-3688760.jpg": "/static/media/pexels-helena-lopes-3688760.c93436839c04d6afbdcc.jpg",
+    "static/media/pexels-tima-miroshnichenko-7567443.jpg": "/static/media/pexels-tima-miroshnichenko-7567443.19d7efb36225c58ced91.jpg",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/team.jpeg": "/static/media/team.f76b1c642e1b8e79a6d9.jpeg",
+    "static/media/fontawesome-webfont.eot": "/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/sooraj.jpeg": "/static/media/sooraj.a9319eed1ab4afe85516.jpeg",
+    "static/media/paisa-hi-paisa-hoga-without-border-black-removebg-preview.png": "/static/media/paisa-hi-paisa-hoga-without-border-black-removebg-preview.ee8adc1ac515676628f3.png",
+    "static/media/alternateImage.jpeg": "/static/media/alternateImage.2f7fc3c4ae6c6ad7bafc.jpeg",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/aaki.jpeg": "/static/media/aaki.a6400ffe9df8c226f29c.jpeg",
+    "static/media/call.png": "/static/media/call.76b9ca271668917a0bfd.png",
+    "static/media/loading-52-unscreen.gif": "/static/media/loading-52-unscreen.e159c38fa6ee90b01c53.gif",
+    "static/media/map.png": "/static/media/map.9b9ad1790fec65dbd802.png",
+    "static/media/dummy-post-square-1-1.jpg": "/static/media/dummy-post-square-1-1.34915c579d3377576ec5.jpg",
+    "static/media/search.png": "/static/media/search.48625617a1f89d1ae658.png",
+    "static/media/gmail.png": "/static/media/gmail.a2f2146f929409405da0.png",
+    "index.html": "/index.html",
+    "main.6465f35c.css.map": "/static/css/main.6465f35c.css.map",
+    "main.ba62314a.js.map": "/static/js/main.ba62314a.js.map",
+    "787.cace681a.chunk.js.map": "/static/js/787.cace681a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6465f35c.css",
+    "static/js/main.ba62314a.js"
+  ]
+}
