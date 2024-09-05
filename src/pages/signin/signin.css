@@ -89,6 +89,10 @@
     background-color: white;
 }
 
+.backhome{
+    margin-right: 97%;
+}
+
 @media screen and (min-width: 320px) and (max-width: 480px) {
     .mainbox1{
         width: 99.8vw;

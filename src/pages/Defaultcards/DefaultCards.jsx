@@ -89,8 +89,8 @@ const Defaultcards = ({ searchResults, isLoading }) => {
             )}
             <div className="container-lg mt-3 text-end">
                 {!isUserLoggedIn && (
-                    <Link to="/signup">
-                        <button className="btn btn btn-danger">Sign Up For More News...</button>
+                    <Link to="/Login">
+                        <button className="btn btn btn-danger">Login For More News...</button>
                     </Link>
                 )}
             </div>

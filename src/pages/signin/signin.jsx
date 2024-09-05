@@ -57,8 +57,16 @@ const Signin = () => {
             </div>
 
             <div className="card mx-4 mx-md-5 shadow-5-strong" style={{ "marginTop": " -100px", "background": "hsla(0, 0%, 100%, 0.8)", "backdropFilter": "blur(30px)" }}>
+
                 <div className="card-body py-5 px-md-5">
                     <div className="row d-flex justify-content-center">
+                        <div className="backhome">
+                            <button className="btn btn-primary">
+                                <i className="bi bi-arrow-left" onClick={()=>{
+                                    navigate('/');
+                                }}></i> Home
+                            </button>
+                        </div>
                         <div className="col-lg-8">
                             <h2 className="fw-bold mb-5">Sign in now</h2>
                             <form onSubmit={handleSubmit}>
