@@ -61,10 +61,8 @@ const Signin = () => {
                 <div className="card-body py-5 px-md-5">
                     <div className="row d-flex justify-content-center">
                         <div className="backhome">
-                            <button className="btn btn-primary">
-                                <i className="bi bi-arrow-left" onClick={()=>{
-                                    navigate('/');
-                                }}></i> Home
+                            <button className="btn btn-primary" onClick={()=>{navigate('/');}}>
+                                <i className="bi bi-arrow-left"></i> Home
                             </button>
                         </div>
                         <div className="col-lg-8">
